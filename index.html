@@ -1,0 +1,418 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Rifa Formatura 2026</title>
+
+<link rel="stylesheet" href="css/style.css">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+<link rel="stylesheet"
+href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+
+</head>
+<body>
+
+<!-- HEADER -->
+
+<header class="header">
+
+<div class="container">
+
+<div class="logo">
+RIFA<span>FORMATURA</span>
+</div>
+
+<nav class="menu">
+
+<a href="#inicio">Início</a>
+<a href="#premios">Prêmios</a>
+<a href="#formandos">Formandos</a>
+<a href="#resultado">Resultados</a>
+<a href="#contato">Contato</a>
+
+</nav>
+
+<div class="header-buttons">
+
+<button class="btn-login">
+Entrar
+</button>
+
+<button class="btn-comprar">
+Comprar Agora
+</button>
+
+</div>
+
+</div>
+
+</header>
+
+<!-- HERO -->
+
+<section class="hero" id="inicio">
+
+<div class="overlay"></div>
+
+<div class="hero-content">
+
+<h1>Formatura ADS 2026</h1>
+
+<p>
+Ajude nossa turma a realizar o sonho da formatura.
+</p>
+
+<div class="contador">
+
+<div>
+<span id="dias">00</span>
+<p>Dias</p>
+</div>
+
+<div>
+<span id="horas">00</span>
+<p>Horas</p>
+</div>
+
+<div>
+<span id="minutos">00</span>
+<p>Min</p>
+</div>
+
+<div>
+<span id="segundos">00</span>
+<p>Seg</p>
+</div>
+
+</div>
+
+<button class="btn-participar">
+Participar da Rifa
+</button>
+
+</div>
+
+</section>
+
+<!-- ESTATÍSTICAS -->
+
+<section class="stats">
+
+<div class="container stats-grid">
+
+<div class="card-stat">
+<h2>R$ 18.540</h2>
+<p>Arrecadados</p>
+</div>
+
+<div class="card-stat">
+<h2>850</h2>
+<p>Números Vendidos</p>
+</div>
+
+<div class="card-stat">
+<h2>150</h2>
+<p>Disponíveis</p>
+</div>
+
+<div class="card-stat">
+<h2>28/07/2026</h2>
+<p>Data Sorteio</p>
+</div>
+
+</div>
+
+</section>
+
+<!-- PRÊMIOS -->
+
+<section class="premios" id="premios">
+
+<div class="container">
+
+<h2>Prêmios Principais</h2>
+
+<div class="premios-grid">
+
+<div class="premio-card">
+
+<img src="assets/images/notebook.jpg">
+
+<h3>Notebook Gamer</h3>
+
+<p>Valor estimado: R$ 4.500</p>
+
+<button>Ver detalhes</button>
+
+</div>
+
+<div class="premio-card">
+
+<img src="assets/images/celular.jpg">
+
+<h3>Smartphone</h3>
+
+<p>Valor estimado: R$ 3.000</p>
+
+<button>Ver detalhes</button>
+
+</div>
+
+<div class="premio-card">
+
+<img src="assets/images/pix.jpg">
+
+<h3>PIX R$ 1.000</h3>
+
+<p>Transferência imediata</p>
+
+<button>Ver detalhes</button>
+
+</div>
+
+</div>
+
+</div>
+
+</section>
+
+<!-- SOBRE -->
+
+<section class="sobre">
+
+<div class="container">
+
+<h2>Sobre a Campanha</h2>
+
+<p>
+
+Esta campanha foi criada para arrecadar fundos para a
+formatura da turma de Análise e Desenvolvimento de Sistemas.
+
+</p>
+
+</div>
+
+</section>
+
+<!-- VÍDEO -->
+
+<section class="video">
+
+<div class="container">
+
+<h2>Vídeo da Turma</h2>
+
+<div class="video-box">
+
+<iframe
+width="100%"
+height="500"
+src="https://www.youtube.com/embed/VIDEO"
+allowfullscreen>
+</iframe>
+
+</div>
+
+</div>
+
+</section>
+
+<!-- FORMANDOS -->
+
+<section class="formandos" id="formandos">
+
+<div class="container">
+
+<h2>Galeria dos Formandos</h2>
+
+<input
+type="text"
+placeholder="Buscar formando..."
+class="buscar-formando">
+
+<div class="formandos-grid">
+
+<div class="formando-card">
+<img src="assets/images/user.jpg">
+<h3>Julya Assis</h3>
+<p>ADS</p>
+</div>
+
+<div class="formando-card">
+<img src="assets/images/user.jpg">
+<h3>João Victor</h3>
+<p>ADS</p>
+</div>
+
+</div>
+
+</div>
+
+</section>
+
+<!-- COMPRA -->
+
+<section class="rifa">
+
+<div class="container">
+
+<h2>Escolha seus números</h2>
+
+<div class="legenda">
+
+<span class="disp">Disponível</span>
+<span class="res">Reservado</span>
+<span class="vend">Vendido</span>
+<span class="sel">Selecionado</span>
+
+</div>
+
+<div id="numeros-grid"></div>
+
+</div>
+
+</section>
+
+<!-- CARRINHO -->
+
+<aside class="carrinho">
+
+<h2>Meus Bilhetes</h2>
+
+<div id="listaNumeros"></div>
+
+<h3>Total: R$ <span id="total">0,00</span></h3>
+
+<button id="gerarPix">
+Gerar PIX
+</button>
+
+</aside>
+
+<!-- PIX -->
+
+<section class="pix">
+
+<div class="container">
+
+<h2>Pagamento PIX</h2>
+
+<div class="pix-box">
+
+<img src="assets/images/qrcode.png">
+
+<textarea readonly>
+00020126360014BR.GOV.BCB.PIX...
+</textarea>
+
+<button>
+Copiar Código PIX
+</button>
+
+</div>
+
+</div>
+
+</section>
+
+<!-- RESULTADOS -->
+
+<section class="resultado" id="resultado">
+
+<div class="container">
+
+<h2>Resultados</h2>
+
+<div class="resultado-card">
+
+<h3>1º Lugar</h3>
+
+<p>Número: 145</p>
+
+<p>Ganhador: Maria Souza</p>
+
+<p>Prêmio: Notebook Gamer</p>
+
+</div>
+
+</div>
+
+</section>
+
+<!-- TOP COMPRADORES -->
+
+<section class="ranking">
+
+<div class="container">
+
+<h2>Maiores Compradores</h2>
+
+<div class="ranking-box">
+
+<div>
+🥇 João Silva - R$ 450
+</div>
+
+<div>
+🥈 Ana Paula - R$ 320
+</div>
+
+<div>
+🥉 Carlos Lima - R$ 280
+</div>
+
+</div>
+
+</div>
+
+</section>
+
+<!-- RODAPÉ -->
+
+<footer id="contato">
+
+<div class="container">
+
+<div class="footer-logo">
+
+RIFA<span>FORMATURA</span>
+
+</div>
+
+<div class="social">
+
+<a href="#">
+<i class="fab fa-instagram"></i>
+</a>
+
+<a href="#">
+<i class="fab fa-facebook"></i>
+</a>
+
+<a href="#">
+<i class="fab fa-whatsapp"></i>
+</a>
+
+</div>
+
+<div class="links">
+
+<a href="#">Regulamento</a>
+<a href="#">Termos</a>
+<a href="#">Privacidade</a>
+
+</div>
+
+</div>
+
+</footer>
+
+<script src="js/app.js"></script>
+
+</body>
+</html>
