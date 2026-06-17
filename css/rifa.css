@@ -1,0 +1,1085 @@
+/* ==========================
+   RESET
+========================== */
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
+
+html{
+    scroll-behavior:smooth;
+}
+
+body{
+    font-family:'Poppins',sans-serif;
+    background:#0f1117;
+    color:#fff;
+    overflow-x:hidden;
+}
+
+img{
+    max-width:100%;
+    display:block;
+}
+
+a{
+    text-decoration:none;
+    color:inherit;
+}
+
+button{
+    border:none;
+    cursor:pointer;
+    font-family:'Poppins',sans-serif;
+}
+
+input,
+textarea{
+    font-family:'Poppins',sans-serif;
+}
+
+/* ==========================
+   VARIÁVEIS
+========================== */
+
+:root{
+
+    --primary:#ff7a00;
+
+    --primary-dark:#e56600;
+
+    --dark:#0f1117;
+
+    --card:#171c26;
+
+    --text:#ffffff;
+
+    --gray:#b7c0d1;
+
+    --green:#19c37d;
+
+    --yellow:#ffc107;
+
+    --red:#ff4d4d;
+
+    --radius:18px;
+
+    --shadow:
+    0 10px 30px rgba(0,0,0,.25);
+
+}
+
+/* ==========================
+   CONTAINER
+========================== */
+
+.container{
+
+    width:92%;
+
+    max-width:1400px;
+
+    margin:auto;
+}
+
+/* ==========================
+   HEADER
+========================== */
+
+.header{
+
+    position:fixed;
+
+    width:100%;
+
+    top:0;
+
+    left:0;
+
+    z-index:999;
+
+    background:
+    rgba(15,17,23,.95);
+
+    backdrop-filter:blur(12px);
+
+    border-bottom:
+    1px solid rgba(255,255,255,.05);
+}
+
+.header .container{
+
+    display:flex;
+
+    justify-content:space-between;
+
+    align-items:center;
+
+    height:85px;
+}
+
+.logo{
+
+    font-size:28px;
+
+    font-weight:800;
+}
+
+.logo span{
+
+    color:var(--primary);
+}
+
+.menu{
+
+    display:flex;
+
+    gap:35px;
+}
+
+.menu a{
+
+    transition:.3s;
+}
+
+.menu a:hover{
+
+    color:var(--primary);
+}
+
+.btn-login{
+
+    padding:12px 22px;
+
+    background:var(--primary);
+
+    color:white;
+
+    border-radius:10px;
+}
+
+/* ==========================
+   HERO
+========================== */
+
+.hero-rifa{
+
+    min-height:70vh;
+
+    display:flex;
+
+    align-items:center;
+
+    text-align:center;
+
+    background:
+    linear-gradient(
+    rgba(0,0,0,.75),
+    rgba(0,0,0,.85)
+    ),
+    url('../assets/images/formatura.jpg');
+
+    background-size:cover;
+
+    background-position:center;
+}
+
+.hero-content{
+
+    max-width:900px;
+
+    margin:auto;
+}
+
+.badge{
+
+    display:inline-block;
+
+    background:
+    rgba(255,122,0,.15);
+
+    color:var(--primary);
+
+    padding:10px 20px;
+
+    border-radius:50px;
+
+    margin-bottom:25px;
+}
+
+.hero-content h1{
+
+    font-size:60px;
+
+    line-height:1.1;
+
+    margin-bottom:25px;
+}
+
+.hero-content p{
+
+    font-size:18px;
+
+    color:#c4ccdb;
+
+    margin-bottom:35px;
+}
+
+/* ==========================
+   CONTADOR
+========================== */
+
+.contador{
+
+    display:flex;
+
+    justify-content:center;
+
+    gap:20px;
+
+    flex-wrap:wrap;
+}
+
+.contador div{
+
+    background:var(--card);
+
+    width:100px;
+
+    padding:20px;
+
+    border-radius:15px;
+}
+
+.contador span{
+
+    display:block;
+
+    font-size:28px;
+
+    font-weight:700;
+
+    color:var(--primary);
+}
+
+/* ==========================
+   ESTATÍSTICAS
+========================== */
+
+.estatisticas{
+
+    padding:90px 0;
+}
+
+.stats-grid{
+
+    display:grid;
+
+    grid-template-columns:
+    repeat(4,1fr);
+
+    gap:25px;
+}
+
+.stat-card{
+
+    background:var(--card);
+
+    padding:35px;
+
+    border-radius:20px;
+
+    text-align:center;
+
+    box-shadow:var(--shadow);
+}
+
+.stat-card h2{
+
+    color:var(--primary);
+
+    margin-bottom:10px;
+
+    font-size:34px;
+}
+
+/* ==========================
+   TÍTULOS
+========================== */
+
+.section-header{
+
+    text-align:center;
+
+    margin-bottom:60px;
+}
+
+.section-header h2{
+
+    font-size:42px;
+
+    margin-bottom:10px;
+}
+
+.section-header p{
+
+    color:#b4bed0;
+}
+
+/* ==========================
+   PRÊMIOS
+========================== */
+
+.premios{
+
+    padding:100px 0;
+}
+
+.premios-grid{
+
+    display:grid;
+
+    grid-template-columns:
+    repeat(3,1fr);
+
+    gap:25px;
+}
+
+.premio-card{
+
+    background:var(--card);
+
+    border-radius:20px;
+
+    overflow:hidden;
+
+    transition:.3s;
+}
+
+.premio-card:hover{
+
+    transform:translateY(-8px);
+}
+
+.premio-card img{
+
+    width:100%;
+
+    height:250px;
+
+    object-fit:cover;
+}
+
+.premio-info{
+
+    padding:25px;
+}
+
+.premio-info h3{
+
+    margin-bottom:10px;
+}
+
+.premio-info p{
+
+    color:#b4bed0;
+}
+
+/* ==========================
+   NÚMEROS
+========================== */
+
+.numeros{
+
+    padding:100px 0;
+}
+
+.legenda{
+
+    display:flex;
+
+    justify-content:center;
+
+    gap:30px;
+
+    flex-wrap:wrap;
+
+    margin-bottom:40px;
+}
+
+.legenda div{
+
+    display:flex;
+
+    align-items:center;
+
+    gap:10px;
+}
+
+.cor{
+
+    width:18px;
+
+    height:18px;
+
+    border-radius:5px;
+}
+
+.disponivel{
+
+    background:var(--green);
+}
+
+.reservado{
+
+    background:var(--yellow);
+}
+
+.vendido{
+
+    background:var(--red);
+}
+
+.selecionado{
+
+    background:var(--primary);
+}
+
+.numeros-grid{
+
+    display:grid;
+
+    grid-template-columns:
+    repeat(auto-fill,minmax(75px,1fr));
+
+    gap:10px;
+}
+/* ==========================
+   BILHETES
+========================== */
+
+.numero{
+
+    background:var(--green);
+
+    color:white;
+
+    height:60px;
+
+    border-radius:12px;
+
+    display:flex;
+
+    align-items:center;
+
+    justify-content:center;
+
+    font-weight:600;
+
+    transition:.3s;
+
+    cursor:pointer;
+
+    user-select:none;
+}
+
+.numero:hover{
+
+    transform:translateY(-3px);
+}
+
+.numero.reservado{
+
+    background:var(--yellow);
+
+    color:#111;
+}
+
+.numero.vendido{
+
+    background:var(--red);
+
+    cursor:not-allowed;
+}
+
+.numero.selecionado{
+
+    background:var(--primary);
+
+    transform:scale(1.05);
+}
+
+/* ==========================
+   COMPRA
+========================== */
+
+.comprar{
+
+    padding:100px 0;
+}
+
+.comprar-grid{
+
+    display:grid;
+
+    grid-template-columns:
+    1fr 1fr;
+
+    gap:30px;
+}
+
+/* ==========================
+   CARRINHO
+========================== */
+
+.resumo-compra{
+
+    background:var(--card);
+
+    padding:35px;
+
+    border-radius:20px;
+
+    box-shadow:var(--shadow);
+
+    position:sticky;
+
+    top:110px;
+}
+
+.resumo-compra h2{
+
+    margin-bottom:25px;
+}
+
+.lista-numeros{
+
+    min-height:150px;
+
+    max-height:300px;
+
+    overflow-y:auto;
+
+    margin-bottom:25px;
+}
+
+.vazio{
+
+    color:#9fa8ba;
+}
+
+.numero-selecionado{
+
+    background:#232938;
+
+    padding:10px;
+
+    border-radius:10px;
+
+    margin-bottom:10px;
+
+    display:flex;
+
+    justify-content:space-between;
+
+    align-items:center;
+}
+
+.remover-numero{
+
+    color:#ff4d4d;
+
+    cursor:pointer;
+}
+
+.resumo-info{
+
+    display:flex;
+
+    flex-direction:column;
+
+    gap:15px;
+}
+
+.resumo-info div{
+
+    display:flex;
+
+    justify-content:space-between;
+}
+
+.total{
+
+    margin-top:15px;
+
+    padding-top:15px;
+
+    border-top:
+    1px solid rgba(255,255,255,.08);
+
+    font-size:22px;
+
+    font-weight:700;
+
+    color:var(--primary);
+}
+
+/* ==========================
+   FORMULÁRIO
+========================== */
+
+.formulario-compra{
+
+    background:var(--card);
+
+    padding:35px;
+
+    border-radius:20px;
+
+    box-shadow:var(--shadow);
+}
+
+.formulario-compra h2{
+
+    margin-bottom:25px;
+}
+
+.form-group{
+
+    margin-bottom:20px;
+}
+
+.form-group label{
+
+    display:block;
+
+    margin-bottom:8px;
+
+    color:#d0d7e6;
+}
+
+.form-group input{
+
+    width:100%;
+
+    padding:14px;
+
+    border:none;
+
+    outline:none;
+
+    background:#232938;
+
+    color:white;
+
+    border-radius:10px;
+}
+
+.form-group input:focus{
+
+    border:
+    1px solid var(--primary);
+}
+
+.btn-gerar-pix{
+
+    width:100%;
+
+    padding:16px;
+
+    background:var(--primary);
+
+    color:white;
+
+    border-radius:12px;
+
+    font-size:16px;
+
+    font-weight:600;
+
+    transition:.3s;
+}
+
+.btn-gerar-pix:hover{
+
+    background:var(--primary-dark);
+}
+
+/* ==========================
+   MODAL PIX
+========================== */
+
+.modal-pix{
+
+    position:fixed;
+
+    inset:0;
+
+    background:
+    rgba(0,0,0,.8);
+
+    display:none;
+
+    align-items:center;
+
+    justify-content:center;
+
+    z-index:9999;
+
+    padding:20px;
+}
+
+.modal-pix.ativo{
+
+    display:flex;
+}
+
+.modal-content{
+
+    background:var(--card);
+
+    width:100%;
+
+    max-width:550px;
+
+    border-radius:20px;
+
+    padding:35px;
+
+    position:relative;
+
+    text-align:center;
+}
+
+.fechar-modal{
+
+    position:absolute;
+
+    right:20px;
+
+    top:20px;
+
+    background:none;
+
+    color:white;
+
+    font-size:30px;
+}
+
+.pix-qrcode img{
+
+    width:250px;
+
+    margin:20px auto;
+}
+
+.pix-copia-cola textarea{
+
+    width:100%;
+
+    height:120px;
+
+    resize:none;
+
+    padding:15px;
+
+    border:none;
+
+    border-radius:12px;
+
+    background:#232938;
+
+    color:white;
+}
+
+.btn-copiar{
+
+    width:100%;
+
+    margin-top:15px;
+
+    padding:15px;
+
+    background:var(--primary);
+
+    color:white;
+
+    border-radius:12px;
+
+    font-weight:600;
+}
+
+.status-pagamento{
+
+    margin-top:20px;
+
+    color:#b8c0d0;
+}
+
+/* ==========================
+   SEGURANÇA
+========================== */
+
+.seguranca{
+
+    padding:100px 0;
+}
+
+.seguranca-grid{
+
+    display:grid;
+
+    grid-template-columns:
+    repeat(3,1fr);
+
+    gap:25px;
+}
+
+.seguranca-card{
+
+    background:var(--card);
+
+    padding:35px;
+
+    text-align:center;
+
+    border-radius:20px;
+
+    transition:.3s;
+}
+
+.seguranca-card:hover{
+
+    transform:translateY(-6px);
+}
+
+.seguranca-card i{
+
+    font-size:40px;
+
+    color:var(--primary);
+
+    margin-bottom:20px;
+}
+
+.seguranca-card h3{
+
+    margin-bottom:10px;
+}
+
+.seguranca-card p{
+
+    color:#b4bed0;
+}
+
+/* ==========================
+   FOOTER
+========================== */
+
+footer{
+
+    background:#090b10;
+
+    padding-top:80px;
+}
+
+.footer-grid{
+
+    display:grid;
+
+    grid-template-columns:
+    2fr 1fr 1fr 1fr;
+
+    gap:40px;
+}
+
+.footer-grid h4{
+
+    margin-bottom:20px;
+}
+
+.footer-grid ul{
+
+    display:flex;
+
+    flex-direction:column;
+
+    gap:10px;
+
+    list-style:none;
+}
+
+.footer-grid li{
+
+    color:#aeb8c8;
+}
+
+.footer-grid a:hover{
+
+    color:var(--primary);
+}
+
+.social-icons{
+
+    display:flex;
+
+    gap:12px;
+}
+
+.social-icons a{
+
+    width:45px;
+
+    height:45px;
+
+    border-radius:50%;
+
+    background:#232938;
+
+    display:flex;
+
+    align-items:center;
+
+    justify-content:center;
+
+    transition:.3s;
+}
+
+.social-icons a:hover{
+
+    background:var(--primary);
+}
+
+.footer-bottom{
+
+    border-top:
+    1px solid rgba(255,255,255,.05);
+
+    margin-top:50px;
+
+    padding:25px 0;
+
+    text-align:center;
+
+    color:#9aa4b6;
+}
+
+/* ==========================
+   RESPONSIVIDADE
+========================== */
+
+@media(max-width:1100px){
+
+    .comprar-grid{
+
+        grid-template-columns:1fr;
+    }
+
+    .stats-grid{
+
+        grid-template-columns:
+        repeat(2,1fr);
+    }
+
+    .premios-grid{
+
+        grid-template-columns:
+        repeat(2,1fr);
+    }
+
+    .seguranca-grid{
+
+        grid-template-columns:
+        repeat(2,1fr);
+    }
+
+}
+
+@media(max-width:768px){
+
+    .hero-content h1{
+
+        font-size:38px;
+    }
+
+    .menu{
+
+        display:none;
+    }
+
+    .stats-grid{
+
+        grid-template-columns:1fr;
+    }
+
+    .premios-grid{
+
+        grid-template-columns:1fr;
+    }
+
+    .seguranca-grid{
+
+        grid-template-columns:1fr;
+    }
+
+    .footer-grid{
+
+        grid-template-columns:1fr;
+    }
+
+    .numeros-grid{
+
+        grid-template-columns:
+        repeat(auto-fill,minmax(60px,1fr));
+    }
+
+}
+
+@media(max-width:480px){
+
+    .hero-content h1{
+
+        font-size:30px;
+    }
+
+    .contador div{
+
+        width:80px;
+    }
+
+    .numero{
+
+        height:50px;
+
+        font-size:13px;
+    }
+
+    .modal-content{
+
+        padding:25px;
+    }
+
+}
+
+/* ==========================
+   SCROLLBAR
+========================== */
+
+::-webkit-scrollbar{
+
+    width:10px;
+}
+
+::-webkit-scrollbar-track{
+
+    background:#11151f;
+}
+
+::-webkit-scrollbar-thumb{
+
+    background:var(--primary);
+
+    border-radius:20px;
+}
