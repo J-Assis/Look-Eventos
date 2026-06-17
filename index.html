@@ -1,100 +1,156 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
+
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Rifa Formaturas 2026</title>
 
-<link rel="stylesheet" href="css/style.css">
+    <meta charset="UTF-8">
 
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <meta name="viewport"
+        content="width=device-width, initial-scale=1.0">
 
-<link rel="stylesheet"
-href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <title>
+        FormaRifa | Rifa Oficial da Formatura
+    </title>
+
+    <meta name="description"
+        content="Ajude estudantes a realizarem o sonho da formatura participando da rifa oficial.">
+
+    <link rel="stylesheet"
+        href="css/style.css">
+
+    <link rel="preconnect"
+        href="https://fonts.googleapis.com">
+
+    <link rel="preconnect"
+        href="https://fonts.gstatic.com"
+        crossorigin>
+
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap"
+        rel="stylesheet">
+
+    <link rel="stylesheet"
+        href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
 
 </head>
+
 <body>
+
+<!-- MENU MOBILE -->
+
+<button class="menu-toggle">
+
+    <i class="fas fa-bars"></i>
+
+</button>
 
 <!-- HEADER -->
 
 <header class="header">
 
-<div class="container">
+    <div class="container">
 
-<div class="logo">
-RIFA<span>FORMATURA</span>
-</div>
+        <div class="logo">
 
-<nav class="menu">
+            FORMA<span>RIFA</span>
 
-<a href="#inicio">Início</a>
-<a href="#premios">Prêmios</a>
-<a href="#formandos">Formandos</a>
-<a href="#resultado">Resultados</a>
-<a href="#contato">Contato</a>
+        </div>
 
-</nav>
+        <nav class="menu">
 
-<div class="header-buttons">
+            <a href="#inicio">
+                Início
+            </a>
 
-<button class="btn-login">
-Entrar
-</button>
+            <a href="#rifa">
+                Rifa
+            </a>
 
-<button class="btn-comprar">
-Comprar Agora
-</button>
+            <a href="#premios">
+                Prêmios
+            </a>
 
-</div>
+            <a href="#ranking">
+                Ranking
+            </a>
 
-</div>
+            <a href="#faq">
+                FAQ
+            </a>
+
+        </nav>
+
+        <div class="header-buttons">
+
+            <button class="btn-login">
+
+                Entrar
+
+            </button>
+
+            <button class="btn-primary">
+
+                Comprar Bilhetes
+
+            </button>
+
+        </div>
+
+    </div>
 
 </header>
 
 <!-- HERO -->
 
-<section class="hero" id="inicio">
+<section
+    class="hero"
+    id="inicio">
 
-<div class="overlay"></div>
+    <div class="hero-overlay"></div>
 
-<div class="hero-content">
+    <div class="container">
 
-<h1>GARANTA JÁ SUA FORMATURA | 2026</h1>
+        <div class="hero-content">
 
-<p>
-Venda bilhetes e chegue mais perto do seu sonho!
-</p>
+            <span class="hero-badge">
 
-<div class="contador">
+                🎓 Rifa Oficial da Formatura
 
-<div>
-<span id="dias">00</span>
-<p>Dias</p>
-</div>
+            </span>
 
-<div>
-<span id="horas">00</span>
-<p>Horas</p>
-</div>
+            <h1>
 
-<div>
-<span id="minutos">00</span>
-<p>Min</p>
-</div>
+                Uma única rifa.
+                Centenas de sonhos.
 
-<div>
-<span id="segundos">00</span>
-<p>Seg</p>
-</div>
+            </h1>
 
-</div>
+            <p>
 
-<button class="btn-participar">
-Participar da Rifa
-</button>
+                Escolha seus números,
+                apoie um formando e ajude
+                estudantes a conquistarem sua formatura.
 
-</div>
+            </p>
+
+            <div class="hero-buttons">
+
+                <button class="btn-primary">
+
+                    Comprar Bilhetes
+
+                </button>
+
+                <button class="btn-secondary">
+
+                    Ver Ranking
+
+                </button>
+
+            </div>
+
+        </div>
+
+    </div>
 
 </section>
 
@@ -102,315 +158,731 @@ Participar da Rifa
 
 <section class="stats">
 
-<div class="container stats-grid">
+    <div class="container">
 
-<div class="card-stat">
-<h2>R$ 18.540</h2>
-<p>Arrecadados</p>
-</div>
+        <div class="stats-grid">
 
-<div class="card-stat">
-<h2>850</h2>
-<p>Números Vendidos</p>
-</div>
+            <div class="stat-card">
 
-<div class="card-stat">
-<h2>150</h2>
-<p>Disponíveis</p>
-</div>
+                <h2 id="arrecadado">
+                    R$ 0
+                </h2>
 
-<div class="card-stat">
-<h2>28/07/2026</h2>
-<p>Data Sorteio</p>
-</div>
+                <p>
+                    Arrecadados
+                </p>
 
-</div>
+            </div>
+
+            <div class="stat-card">
+
+                <h2 id="formandos">
+                    0
+                </h2>
+
+                <p>
+                    Formandos
+                </p>
+
+            </div>
+
+            <div class="stat-card">
+
+                <h2 id="bilhetes">
+                    0
+                </h2>
+
+                <p>
+                    Bilhetes Vendidos
+                </p>
+
+            </div>
+
+            <div class="stat-card">
+
+                <h2 id="premiosQtd">
+                    0
+                </h2>
+
+                <p>
+                    Prêmios
+                </p>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+<!-- RIFA OFICIAL -->
+
+<section
+    class="rifa-oficial"
+    id="rifa">
+
+    <div class="container">
+
+        <div class="section-header">
+
+            <h2>
+
+                Rifa Oficial da Formatura 2026
+
+            </h2>
+
+            <p>
+
+                Compre números,
+                escolha qual formando deseja apoiar
+                e concorra a grandes prêmios.
+
+            </p>
+
+        </div>
+
+        <div class="rifa-box">
+
+            <div class="rifa-info">
+
+                <h3>
+
+                    Como funciona?
+
+                </h3>
+
+                <ul>
+
+                    <li>
+                        Escolha seus números
+                    </li>
+
+                    <li>
+                        Escolha o formando
+                    </li>
+
+                    <li>
+                        Realize o pagamento
+                    </li>
+
+                    <li>
+                        Concorra aos prêmios
+                    </li>
+
+                </ul>
+
+                <button class="btn-primary">
+
+                    Participar Agora
+
+                </button>
+
+            </div>
+
+            <div class="rifa-meta">
+
+                <h3>
+
+                    Meta Geral
+
+                </h3>
+
+                <div class="progress">
+
+                    <div class="progress-bar"
+                        style="width:68%">
+                    </div>
+
+                </div>
+
+                <span>
+
+                    68% arrecadado
+
+                </span>
+
+            </div>
+
+        </div>
+
+    </div>
 
 </section>
 
 <!-- PRÊMIOS -->
 
-<section class="premios" id="premios">
+<section
+    class="premios"
+    id="premios">
 
-<div class="container">
+    <div class="container">
 
-<h2>Prêmios Principais</h2>
+        <div class="section-header">
 
-<div class="premios-grid">
+            <h2>
 
-<div class="premio-card">
+                🎁 Prêmios Principais
 
-<img src="pc.jpg">
+            </h2>
 
-<h3>Notebook Gamer</h3>
+            <p>
 
-<p>Valor estimado: R$ 4.500</p>
+                Quanto mais participar,
+                maiores as chances de ganhar.
 
-<button>Ver detalhes</button>
+            </p>
 
-</div>
+        </div>
 
-<div class="premio-card">
+        <div class="premios-grid">
 
-<img src="cllr.jpg">
+            <div class="premio-card">
 
-<h3>Smartphone</h3>
+                <img src="assets/images/notebook.jpg">
 
-<p>Valor estimado: R$ 3.000</p>
+                <h3>
 
-<button>Ver detalhes</button>
+                    Notebook Gamer
 
-</div>
+                </h3>
 
-<div class="premio-card">
+                <p>
 
-<img src="pix.jpg">
+                    Valor estimado:
+                    R$ 4.500
 
-<h3>PIX R$ 1.000</h3>
+                </p>
 
-<p>Transferência imediata</p>
+            </div>
 
-<button>Ver detalhes</button>
+            <div class="premio-card">
 
-</div>
+                <img src="assets/images/celular.jpg">
 
-</div>
+                <h3>
 
-</div>
+                    Smartphone Premium
 
-</section>
+                </h3>
 
-<!-- SOBRE -->
+                <p>
 
-<section class="sobre">
+                    Valor estimado:
+                    R$ 3.000
 
-<div class="container">
+                </p>
 
-<h2>Sobre a Campanha</h2>
+            </div>
 
-<p>
+            <div class="premio-card">
 
-Esta campanha foi criada para arrecadar fundos para a
-formatura da turma de Análise e Desenvolvimento de Sistemas.
+                <img src="assets/images/pix.jpg">
 
-</p>
+                <h3>
 
-</div>
+                    PIX R$ 1.000
 
-</section>
+                </h3>
 
-<!-- VÍDEO -->
+                <p>
 
-<section class="video">
+                    Transferência instantânea
 
-<div class="container">
+                </p>
 
-<h2>Vídeo da Turma</h2>
+            </div>
 
-<div class="video-box">
+        </div>
 
-<iframe
-width="100%"
-height="500"
-src="https://www.youtube.com/embed/VIDEO"
-allowfullscreen>
-</iframe>
-
-</div>
-
-</div>
+    </div>
 
 </section>
 
-<!-- FORMANDOS -->
+  <!-- TOP FORMANDOS -->
 
-<section class="formandos" id="formandos">
+<section
+    class="ranking"
+    id="ranking">
 
-<div class="container">
+    <div class="container">
 
-<h2>Galeria dos Formandos</h2>
+        <div class="section-header">
 
-<input
-type="text"
-placeholder="Buscar formando..."
-class="buscar-formando">
+            <h2>
 
-<div class="formandos-grid">
+                🏆 Top 10 Formandos
 
-<div class="formando-card">
-<img src="assets/images/user.jpg">
-<h3>Julya Assis</h3>
-<p>ADS</p>
-</div>
+            </h2>
 
-<div class="formando-card">
-<img src="assets/images/user.jpg">
-<h3>João Victor</h3>
-<p>ADS</p>
-</div>
+            <p>
 
-</div>
+                Os alunos que mais arrecadaram através dos seus links.
 
-</div>
+            </p>
 
-</section>
+        </div>
 
-<!-- COMPRA -->
+        <div
+            class="ranking-grid"
+            id="rankingGrid">
 
-<section class="rifa">
+            <!-- Gerado via JavaScript -->
 
-<div class="container">
+        </div>
 
-<h2>Escolha seus números</h2>
-
-<div class="legenda">
-
-<span class="disp">Disponível</span>
-<span class="res">Reservado</span>
-<span class="vend">Vendido</span>
-<span class="sel">Selecionado</span>
-
-</div>
-
-<div id="numeros-grid"></div>
-
-</div>
+    </div>
 
 </section>
 
-<!-- CARRINHO -->
+<!-- COMO FUNCIONA -->
 
-<aside class="carrinho">
+<section
+    class="como-funciona">
 
-<h2>Meus Bilhetes</h2>
+    <div class="container">
 
-<div id="listaNumeros"></div>
+        <div class="section-header">
 
-<h3>Total: R$ <span id="total">0,00</span></h3>
+            <h2>
 
-<button id="gerarPix">
-Gerar PIX
-</button>
+                Como Funciona
 
-</aside>
+            </h2>
 
-<!-- PIX -->
+        </div>
 
-<section class="pix">
+        <div class="steps">
 
-<div class="container">
+            <div class="step">
 
-<h2>Pagamento PIX</h2>
+                <div class="step-icon">
 
-<div class="pix-box">
+                    <i class="fas fa-user-plus"></i>
 
-<img src="assets/images/qrcode.png">
+                </div>
 
-<textarea readonly>
-00020126360014BR.GOV.BCB.PIX...
-</textarea>
+                <h3>
 
-<button>
-Copiar Código PIX
-</button>
+                    Crie sua Conta
 
-</div>
+                </h3>
 
-</div>
+                <p>
+
+                    Cadastre-se gratuitamente na plataforma.
+
+                </p>
+
+            </div>
+
+            <div class="step">
+
+                <div class="step-icon">
+
+                    <i class="fas fa-link"></i>
+
+                </div>
+
+                <h3>
+
+                    Receba seu Link
+
+                </h3>
+
+                <p>
+
+                    Ganhe uma página exclusiva para divulgar.
+
+                </p>
+
+            </div>
+
+            <div class="step">
+
+                <div class="step-icon">
+
+                    <i class="fas fa-share-alt"></i>
+
+                </div>
+
+                <h3>
+
+                    Compartilhe
+
+                </h3>
+
+                <p>
+
+                    Envie para amigos, familiares e redes sociais.
+
+                </p>
+
+            </div>
+
+            <div class="step">
+
+                <div class="step-icon">
+
+                    <i class="fas fa-money-bill-wave"></i>
+
+                </div>
+
+                <h3>
+
+                    Arrecade
+
+                </h3>
+
+                <p>
+
+                    Cada venda realizada pelo seu link reduz o custo da sua formatura.
+
+                </p>
+
+            </div>
+
+        </div>
+
+    </div>
 
 </section>
 
-<!-- RESULTADOS -->
+<!-- ÚLTIMOS GANHADORES -->
 
-<section class="resultado" id="resultado">
+<section
+    class="ganhadores">
 
-<div class="container">
+    <div class="container">
 
-<h2>Resultados</h2>
+        <div class="section-header">
 
-<div class="resultado-card">
+            <h2>
 
-<h3>1º Lugar</h3>
+                🎉 Últimos Ganhadores
 
-<p>Número: 145</p>
+            </h2>
 
-<p>Ganhador: Maria Souza</p>
+        </div>
 
-<p>Prêmio: Notebook Gamer</p>
+        <div class="ganhadores-grid">
 
-</div>
+            <div class="ganhador-card">
 
-</div>
+                <h3>
+
+                    Maria Souza
+
+                </h3>
+
+                <p>
+
+                    Número Sorteado: 145
+
+                </p>
+
+                <span>
+
+                    Notebook Gamer
+
+                </span>
+
+            </div>
+
+            <div class="ganhador-card">
+
+                <h3>
+
+                    João Pedro
+
+                </h3>
+
+                <p>
+
+                    Número Sorteado: 892
+
+                </p>
+
+                <span>
+
+                    Smartphone Premium
+
+                </span>
+
+            </div>
+
+            <div class="ganhador-card">
+
+                <h3>
+
+                    Ana Clara
+
+                </h3>
+
+                <p>
+
+                    Número Sorteado: 514
+
+                </p>
+
+                <span>
+
+                    PIX R$ 1.000
+
+                </span>
+
+            </div>
+
+        </div>
+
+    </div>
 
 </section>
 
-<!-- TOP COMPRADORES -->
+<!-- FAQ -->
 
-<section class="ranking">
+<section
+    class="faq"
+    id="faq">
 
-<div class="container">
+    <div class="container">
 
-<h2>Maiores Compradores</h2>
+        <div class="section-header">
 
-<div class="ranking-box">
+            <h2>
 
-<div>
-🥇 João Silva - R$ 450
-</div>
+                Perguntas Frequentes
 
-<div>
-🥈 Ana Paula - R$ 320
-</div>
+            </h2>
 
-<div>
-🥉 Carlos Lima - R$ 280
-</div>
+        </div>
 
-</div>
+        <div class="faq-container">
 
-</div>
+            <div class="faq-item">
+
+                <button class="faq-question">
+
+                    Como participo da rifa?
+
+                </button>
+
+                <div class="faq-answer">
+
+                    Basta escolher seus números, efetuar o pagamento e aguardar o sorteio.
+
+                </div>
+
+            </div>
+
+            <div class="faq-item">
+
+                <button class="faq-question">
+
+                    Como os alunos arrecadam?
+
+                </button>
+
+                <div class="faq-answer">
+
+                    Cada formando possui um link próprio. Toda compra realizada através desse link é contabilizada para ele.
+
+                </div>
+
+            </div>
+
+            <div class="faq-item">
+
+                <button class="faq-question">
+
+                    Como recebo meu prêmio?
+
+                </button>
+
+                <div class="faq-answer">
+
+                    Os vencedores são divulgados na plataforma e contatados pela equipe organizadora.
+
+                </div>
+
+            </div>
+
+            <div class="faq-item">
+
+                <button class="faq-question">
+
+                    O pagamento é seguro?
+
+                </button>
+
+                <div class="faq-answer">
+
+                    Sim. Os pagamentos são processados através de integração PIX segura.
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
 
 </section>
 
-<!-- RODAPÉ -->
+<!-- CTA FINAL -->
 
-<footer id="contato">
+<section
+    class="cta">
 
-<div class="container">
+    <div class="container">
 
-<div class="footer-logo">
+        <div class="cta-box">
 
-RIFA<span>FORMATURA</span>
+            <h2>
 
-</div>
+                Pronto para ajudar um formando?
 
-<div class="social">
+            </h2>
 
-<a href="#">
-<i class="fab fa-instagram"></i>
-</a>
+            <p>
 
-<a href="#">
-<i class="fab fa-facebook"></i>
-</a>
+                Compre bilhetes, concorra a prêmios e apoie sonhos.
 
-<a href="#">
-<i class="fab fa-whatsapp"></i>
-</a>
+            </p>
 
-</div>
+            <button class="btn-primary">
 
-<div class="links">
+                Comprar Bilhetes
 
-<a href="#">Regulamento</a>
-<a href="#">Termos</a>
-<a href="#">Privacidade</a>
+            </button>
 
-</div>
+        </div>
 
-</div>
+    </div>
+
+</section>
+
+<!-- FOOTER -->
+
+<footer>
+
+    <div class="container">
+
+        <div class="footer-grid">
+
+            <div>
+
+                <div class="logo">
+
+                    FORMA<span>RIFA</span>
+
+                </div>
+
+                <p>
+
+                    A maior plataforma de arrecadação para formaturas do Brasil.
+
+                </p>
+
+            </div>
+
+            <div>
+
+                <h4>
+
+                    Navegação
+
+                </h4>
+
+                <ul>
+
+                    <li><a href="#inicio">Início</a></li>
+
+                    <li><a href="#rifa">Rifa</a></li>
+
+                    <li><a href="#ranking">Ranking</a></li>
+
+                    <li><a href="#faq">FAQ</a></li>
+
+                </ul>
+
+            </div>
+
+            <div>
+
+                <h4>
+
+                    Contato
+
+                </h4>
+
+                <ul>
+
+                    <li>contato@formarifa.com</li>
+
+                    <li>(73) 99999-9999</li>
+
+                </ul>
+
+            </div>
+
+            <div>
+
+                <h4>
+
+                    Redes Sociais
+
+                </h4>
+
+                <div class="social-icons">
+
+                    <a href="#">
+                        <i class="fab fa-instagram"></i>
+                    </a>
+
+                    <a href="#">
+                        <i class="fab fa-facebook"></i>
+                    </a>
+
+                    <a href="#">
+                        <i class="fab fa-youtube"></i>
+                    </a>
+
+                    <a href="#">
+                        <i class="fab fa-tiktok"></i>
+                    </a>
+
+                </div>
+
+            </div>
+
+        </div>
+
+        <div class="footer-bottom">
+
+            <p>
+
+                © 2026 FormaRifa. Todos os direitos reservados.
+
+            </p>
+
+        </div>
+
+    </div>
 
 </footer>
+
+<!-- WHATSAPP -->
+
+<a
+    href="#"
+    class="whatsapp-float">
+
+    <i class="fab fa-whatsapp"></i>
+
+</a>
+
+<!-- JAVASCRIPT -->
 
 <script src="js/app.js"></script>
 
