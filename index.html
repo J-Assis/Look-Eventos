@@ -299,6 +299,225 @@
 
 </section>
 
+<!-- RIFA -->
+
+    <section class="rifa-section">
+
+    <div class="container">
+
+        <div class="rifa-header">
+
+            <div>
+                <h2>Escolha seus números</h2>
+
+                <p>
+                    Escolha quantos números desejar.
+                    Eles ficarão reservados por 10 minutos.
+                </p>
+            </div>
+
+            <div class="search-box">
+
+                <input
+                    type="number"
+                    id="buscarNumero"
+                    placeholder="Buscar número">
+
+                <button id="btnBuscar">
+                    <i class="fas fa-search"></i>
+                </button>
+
+            </div>
+
+        </div>
+
+
+        <div class="quick-buttons">
+
+            <button class="quick" data-qtd="1">+1</button>
+
+            <button class="quick" data-qtd="5">+5</button>
+
+            <button class="quick" data-qtd="10">+10</button>
+
+            <button class="quick" data-qtd="20">+20</button>
+
+            <button id="surpresinha">
+
+                Surpresinha
+
+            </button>
+
+            <button id="limpar">
+
+                Limpar
+
+            </button>
+
+        </div>
+
+
+        <div class="legenda">
+
+            <div>
+
+                <span class="cor disponivel"></span>
+
+                Disponível
+
+            </div>
+
+            <div>
+
+                <span class="cor reservado"></span>
+
+                Reservado
+
+            </div>
+
+            <div>
+
+                <span class="cor vendido"></span>
+
+                Vendido
+
+            </div>
+
+            <div>
+
+                <span class="cor selecionado"></span>
+
+                Selecionado
+
+            </div>
+
+        </div>
+
+
+        <div class="barra-info">
+
+            <div>
+
+                <h4>Disponíveis</h4>
+
+                <span id="qtdDisponivel">
+
+                    10000
+
+                </span>
+
+            </div>
+
+            <div>
+
+                <h4>Vendidos</h4>
+
+                <span id="qtdVendido">
+
+                    0
+
+                </span>
+
+            </div>
+
+            <div>
+
+                <h4>Selecionados</h4>
+
+                <span id="qtdSelecionado">
+
+                    0
+
+                </span>
+
+            </div>
+
+        </div>
+
+
+        <div class="progress">
+
+            <div
+                class="progress-bar"
+                id="progressBar">
+            </div>
+
+        </div>
+
+
+        <div class="pagination">
+
+            <button id="anterior">
+
+                ←
+
+            </button>
+
+            <span id="paginaAtual">
+
+                1 - 1000
+
+            </span>
+
+            <button id="proximo">
+
+                →
+
+            </button>
+
+        </div>
+
+
+        <div
+            id="gradeNumeros"
+            class="grid-numeros">
+
+        </div>
+
+    </div>
+
+</section>
+
+
+
+<div class="carrinho-rifa">
+
+    <div>
+
+        <strong>
+
+            Números
+
+        </strong>
+
+        <div id="listaSelecionados">
+
+            Nenhum
+
+        </div>
+
+    </div>
+
+    <div>
+
+        <strong>Total</strong>
+
+        <h3 id="valorTotal">
+
+            R$ 0,00
+
+        </h3>
+
+    </div>
+
+    <button id="comprar">
+
+        Continuar Compra
+
+    </button>
+
+</div>
+
 <!-- PRÊMIOS -->
 
 <section
@@ -763,7 +982,7 @@
 
                 <div class="logo">
 
-                    FORMA<span>RIFA</span>
+                    LOOK<span>EVENTOS</span>
 
                 </div>
 
@@ -807,7 +1026,7 @@
 
                 <ul>
 
-                    <li>contato@formarifa.com</li>
+                    <li>contato@LookEventos.com</li>
 
                     <li>(73) 99999-9999</li>
 
@@ -850,7 +1069,7 @@
         <div class="footer-bottom">
 
 <p>
-© <span id="anoAtual"></span> FormaRifa.
+© <span id="anoAtual"></span>  Look Eventos.
 Todos os direitos reservados.
 </p>
 
