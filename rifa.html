@@ -1,0 +1,873 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta name="viewport"
+        content="width=device-width, initial-scale=1.0">
+
+    <title>
+        FormaRifa | Comprar Bilhetes
+    </title>
+
+    <link rel="stylesheet"
+        href="css/rifa.css">
+
+    <link rel="preconnect"
+        href="https://fonts.googleapis.com">
+
+    <link rel="preconnect"
+        href="https://fonts.gstatic.com"
+        crossorigin>
+
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap"
+        rel="stylesheet">
+
+    <link rel="stylesheet"
+        href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+
+</head>
+
+<body>
+
+<!-- HEADER -->
+
+<header class="header">
+
+    <div class="container">
+
+        <a href="index.html" class="logo">
+
+            FORMA<span>RIFA</span>
+
+        </a>
+
+        <nav class="menu">
+
+            <a href="index.html">
+                Início
+            </a>
+
+            <a href="#premios">
+                Prêmios
+            </a>
+
+            <a href="#numeros">
+                Bilhetes
+            </a>
+
+            <a href="#comprar">
+                Comprar
+            </a>
+
+        </nav>
+
+        <button class="btn-login">
+
+            Entrar
+
+        </button>
+
+    </div>
+
+</header>
+
+<!-- HERO -->
+
+<section class="hero-rifa">
+
+    <div class="container">
+
+        <div class="hero-content">
+
+            <span class="badge">
+
+                🎓 Rifa Oficial da Formatura 2026
+
+            </span>
+
+            <h1>
+
+                Escolha seus números e concorra a grandes prêmios
+
+            </h1>
+
+            <p>
+
+                Cada bilhete adquirido ajuda estudantes a realizarem
+                o sonho da formatura.
+
+            </p>
+
+            <div class="contador">
+
+                <div>
+
+                    <span id="dias">
+                        00
+                    </span>
+
+                    <small>
+                        Dias
+                    </small>
+
+                </div>
+
+                <div>
+
+                    <span id="horas">
+                        00
+                    </span>
+
+                    <small>
+                        Horas
+                    </small>
+
+                </div>
+
+                <div>
+
+                    <span id="minutos">
+                        00
+                    </span>
+
+                    <small>
+                        Min
+                    </small>
+
+                </div>
+
+                <div>
+
+                    <span id="segundos">
+                        00
+                    </span>
+
+                    <small>
+                        Seg
+                    </small>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+<!-- ESTATÍSTICAS -->
+
+<section class="estatisticas">
+
+    <div class="container">
+
+        <div class="stats-grid">
+
+            <div class="stat-card">
+
+                <h2>
+
+                    10.000
+
+                </h2>
+
+                <p>
+
+                    Bilhetes Totais
+
+                </p>
+
+            </div>
+
+            <div class="stat-card">
+
+                <h2>
+
+                    6.850
+
+                </h2>
+
+                <p>
+
+                    Vendidos
+
+                </p>
+
+            </div>
+
+            <div class="stat-card">
+
+                <h2>
+
+                    3.150
+
+                </h2>
+
+                <p>
+
+                    Disponíveis
+
+                </p>
+
+            </div>
+
+            <div class="stat-card">
+
+                <h2>
+
+                    R$ 10
+
+                </h2>
+
+                <p>
+
+                    Valor por Bilhete
+
+                </p>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+<!-- PRÊMIOS -->
+
+<section
+    class="premios"
+    id="premios">
+
+    <div class="container">
+
+        <div class="section-header">
+
+            <h2>
+
+                🎁 Prêmios da Rifa
+
+            </h2>
+
+            <p>
+
+                Quanto mais números você comprar,
+                maiores as chances de ganhar.
+
+            </p>
+
+        </div>
+
+        <div class="premios-grid">
+
+            <div class="premio-card">
+
+                <img
+                    src="assets/images/notebook.jpg"
+                    alt="Notebook Gamer">
+
+                <div class="premio-info">
+
+                    <h3>
+
+                        Notebook Gamer
+
+                    </h3>
+
+                    <p>
+
+                        Valor estimado:
+                        R$ 4.500
+
+                    </p>
+
+                </div>
+
+            </div>
+
+            <div class="premio-card">
+
+                <img
+                    src="assets/images/celular.jpg"
+                    alt="Smartphone">
+
+                <div class="premio-info">
+
+                    <h3>
+
+                        Smartphone Premium
+
+                    </h3>
+
+                    <p>
+
+                        Valor estimado:
+                        R$ 3.000
+
+                    </p>
+
+                </div>
+
+            </div>
+
+            <div class="premio-card">
+
+                <img
+                    src="assets/images/pix.jpg"
+                    alt="PIX">
+
+                <div class="premio-info">
+
+                    <h3>
+
+                        PIX R$ 1.000
+
+                    </h3>
+
+                    <p>
+
+                        Transferência instantânea
+
+                    </p>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+<!-- ESCOLHA DOS NÚMEROS -->
+
+<section
+    class="numeros"
+    id="numeros">
+
+    <div class="container">
+
+        <div class="section-header">
+
+            <h2>
+
+                Escolha seus Bilhetes
+
+            </h2>
+
+            <p>
+
+                Clique nos números desejados.
+
+            </p>
+
+        </div>
+
+        <div class="legenda">
+
+            <div>
+
+                <span class="cor disponivel"></span>
+
+                Disponível
+
+            </div>
+
+            <div>
+
+                <span class="cor reservado"></span>
+
+                Reservado
+
+            </div>
+
+            <div>
+
+                <span class="cor vendido"></span>
+
+                Vendido
+
+            </div>
+
+            <div>
+
+                <span class="cor selecionado"></span>
+
+                Selecionado
+
+            </div>
+
+        </div>
+
+        <div
+            id="numerosGrid"
+            class="numeros-grid">
+
+            <!-- Gerado pelo JavaScript -->
+
+        </div>
+
+    </div>
+
+</section>
+<!-- CARRINHO E COMPRA -->
+
+<section
+    class="comprar"
+    id="comprar">
+
+    <div class="container">
+
+        <div class="comprar-grid">
+
+            <!-- RESUMO -->
+
+            <div class="resumo-compra">
+
+                <h2>
+
+                    Meu Carrinho
+
+                </h2>
+
+                <div
+                    id="listaNumeros"
+                    class="lista-numeros">
+
+                    <p class="vazio">
+
+                        Nenhum número selecionado
+
+                    </p>
+
+                </div>
+
+                <div class="resumo-info">
+
+                    <div>
+
+                        <span>
+                            Quantidade
+                        </span>
+
+                        <strong id="quantidadeBilhetes">
+
+                            0
+
+                        </strong>
+
+                    </div>
+
+                    <div>
+
+                        <span>
+                            Valor Unitário
+                        </span>
+
+                        <strong>
+
+                            R$ 10,00
+
+                        </strong>
+
+                    </div>
+
+                    <div class="total">
+
+                        <span>
+
+                            Total
+
+                        </span>
+
+                        <strong id="valorTotal">
+
+                            R$ 0,00
+
+                        </strong>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+            <!-- FORMULÁRIO -->
+
+            <div class="formulario-compra">
+
+                <h2>
+
+                    Dados do Comprador
+
+                </h2>
+
+                <form id="formCompra">
+
+                    <div class="form-group">
+
+                        <label>
+
+                            Nome Completo
+
+                        </label>
+
+                        <input
+                            type="text"
+                            id="nome"
+                            required>
+
+                    </div>
+
+                    <div class="form-group">
+
+                        <label>
+
+                            E-mail
+
+                        </label>
+
+                        <input
+                            type="email"
+                            id="email"
+                            required>
+
+                    </div>
+
+                    <div class="form-group">
+
+                        <label>
+
+                            WhatsApp
+
+                        </label>
+
+                        <input
+                            type="tel"
+                            id="telefone"
+                            required>
+
+                    </div>
+
+                    <div class="form-group">
+
+                        <label>
+
+                            CPF
+
+                        </label>
+
+                        <input
+                            type="text"
+                            id="cpf"
+                            required>
+
+                    </div>
+
+                    <button
+                        type="submit"
+                        class="btn-gerar-pix">
+
+                        Gerar PIX
+
+                    </button>
+
+                </form>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+<!-- MODAL PIX -->
+
+<div
+    class="modal-pix"
+    id="modalPix">
+
+    <div class="modal-content">
+
+        <button
+            class="fechar-modal"
+            id="fecharModal">
+
+            ×
+
+        </button>
+
+        <h2>
+
+            Pagamento PIX
+
+        </h2>
+
+        <p>
+
+            Escaneie o QR Code ou copie o código abaixo.
+
+        </p>
+
+        <div class="pix-qrcode">
+
+            <img
+                src="assets/images/qrcode.png"
+                alt="QR Code PIX">
+
+        </div>
+
+        <div class="pix-copia-cola">
+
+            <textarea
+                id="codigoPix"
+                readonly>
+
+00020126580014BR.GOV.BCB.PIX0114+5573999999999520400005303986540510.005802BR5920FORMA RIFA LTDA6009SAOPAULO62070503***6304ABCD
+
+            </textarea>
+
+        </div>
+
+        <button
+            id="copiarPix"
+            class="btn-copiar">
+
+            Copiar Código PIX
+
+        </button>
+
+        <div class="status-pagamento">
+
+            <p>
+
+                Após o pagamento, a confirmação ocorrerá automaticamente.
+
+            </p>
+
+        </div>
+
+    </div>
+
+</div>
+
+<!-- SEGURANÇA -->
+
+<section class="seguranca">
+
+    <div class="container">
+
+        <div class="seguranca-grid">
+
+            <div class="seguranca-card">
+
+                <i class="fas fa-shield-alt"></i>
+
+                <h3>
+
+                    Pagamento Seguro
+
+                </h3>
+
+                <p>
+
+                    Transações protegidas por criptografia.
+
+                </p>
+
+            </div>
+
+            <div class="seguranca-card">
+
+                <i class="fas fa-bolt"></i>
+
+                <h3>
+
+                    PIX Instantâneo
+
+                </h3>
+
+                <p>
+
+                    Confirmação rápida e automática.
+
+                </p>
+
+            </div>
+
+            <div class="seguranca-card">
+
+                <i class="fas fa-trophy"></i>
+
+                <h3>
+
+                    Sorteios Transparentes
+
+                </h3>
+
+                <p>
+
+                    Resultados publicados para todos os participantes.
+
+                </p>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+<!-- FOOTER -->
+
+<footer>
+
+    <div class="container">
+
+        <div class="footer-grid">
+
+            <div>
+
+                <div class="logo">
+
+                    FORMA<span>RIFA</span>
+
+                </div>
+
+                <p>
+
+                    Transformando sonhos de formatura em realidade.
+
+                </p>
+
+            </div>
+
+            <div>
+
+                <h4>
+
+                    Plataforma
+
+                </h4>
+
+                <ul>
+
+                    <li>
+
+                        <a href="index.html">
+
+                            Início
+
+                        </a>
+
+                    </li>
+
+                    <li>
+
+                        <a href="#premios">
+
+                            Prêmios
+
+                        </a>
+
+                    </li>
+
+                    <li>
+
+                        <a href="#comprar">
+
+                            Comprar
+
+                        </a>
+
+                    </li>
+
+                </ul>
+
+            </div>
+
+            <div>
+
+                <h4>
+
+                    Contato
+
+                </h4>
+
+                <ul>
+
+                    <li>
+
+                        contato@formarifa.com
+
+                    </li>
+
+                    <li>
+
+                        (73) 99999-9999
+
+                    </li>
+
+                </ul>
+
+            </div>
+
+            <div>
+
+                <h4>
+
+                    Redes Sociais
+
+                </h4>
+
+                <div class="social-icons">
+
+                    <a href="#">
+                        <i class="fab fa-instagram"></i>
+                    </a>
+
+                    <a href="#">
+                        <i class="fab fa-facebook"></i>
+                    </a>
+
+                    <a href="#">
+                        <i class="fab fa-youtube"></i>
+                    </a>
+
+                    <a href="#">
+                        <i class="fab fa-tiktok"></i>
+                    </a>
+
+                </div>
+
+            </div>
+
+        </div>
+
+        <div class="footer-bottom">
+
+            <p>
+
+                © <span id="anoAtual"></span>
+                FormaRifa.
+                Todos os direitos reservados.
+
+            </p>
+
+        </div>
+
+    </div>
+
+</footer>
+
+<script src="js/rifa.js"></script>
+
+</body>
+</html>
