@@ -1,11 +1,11 @@
-/* ==========================
+/* =====================================================
    MENU MOBILE
-========================== */
+===================================================== */
 
 const menuToggle = document.querySelector(".menu-toggle");
 const menu = document.querySelector(".menu");
 
-if(menuToggle){
+if (menuToggle && menu) {
 
     menuToggle.addEventListener("click", () => {
 
@@ -13,12 +13,44 @@ if(menuToggle){
 
         const icon = menuToggle.querySelector("i");
 
-        if(menu.classList.contains("active")){
+        if (icon) {
 
-            icon.classList.remove("fa-bars");
-            icon.classList.add("fa-times");
+            if (menu.classList.contains("active")) {
 
-        }else{
+                icon.classList.remove("fa-bars");
+                icon.classList.add("fa-times");
+
+            } else {
+
+                icon.classList.remove("fa-times");
+                icon.classList.add("fa-bars");
+
+            }
+
+        }
+
+    });
+
+}
+
+
+/* =====================================================
+   FECHAR MENU AO CLICAR
+===================================================== */
+
+document.querySelectorAll(".menu a").forEach(link => {
+
+    link.addEventListener("click", () => {
+
+        if (menu) {
+
+            menu.classList.remove("active");
+
+        }
+
+        const icon = menuToggle?.querySelector("i");
+
+        if (icon) {
 
             icon.classList.remove("fa-times");
             icon.classList.add("fa-bars");
@@ -27,30 +59,12 @@ if(menuToggle){
 
     });
 
-}
-
-/* ==========================
-   FECHAR MENU AO CLICAR
-========================== */
-
-document.querySelectorAll(".menu a").forEach(link => {
-
-    link.addEventListener("click", () => {
-
-        menu.classList.remove("active");
-
-        const icon = menuToggle.querySelector("i");
-
-        icon.classList.remove("fa-times");
-        icon.classList.add("fa-bars");
-
-    });
-
 });
 
-/* ==========================
+
+/* =====================================================
    FAQ
-========================== */
+===================================================== */
 
 const faqItems = document.querySelectorAll(".faq-item");
 
@@ -58,11 +72,13 @@ faqItems.forEach(item => {
 
     const question = item.querySelector(".faq-question");
 
+    if (!question) return;
+
     question.addEventListener("click", () => {
 
         faqItems.forEach(faq => {
 
-            if(faq !== item){
+            if (faq !== item) {
 
                 faq.classList.remove("active");
 
@@ -76,15 +92,21 @@ faqItems.forEach(item => {
 
 });
 
-/* ==========================
-   CONTADORES ANIMADOS
-========================== */
 
-function animateCounter(id, target, prefix = "", suffix = "") {
+/* =====================================================
+   CONTADORES ANIMADOS
+===================================================== */
+
+function animateCounter(
+    id,
+    target,
+    prefix = "",
+    suffix = ""
+) {
 
     const element = document.getElementById(id);
 
-    if(!element) return;
+    if (!element) return;
 
     let current = 0;
 
@@ -94,7 +116,7 @@ function animateCounter(id, target, prefix = "", suffix = "") {
 
         current += increment;
 
-        if(current >= target){
+        if (current >= target) {
 
             current = target;
 
@@ -103,16 +125,28 @@ function animateCounter(id, target, prefix = "", suffix = "") {
         }
 
         element.textContent =
+
             prefix +
-            Math.floor(current).toLocaleString("pt-BR") +
+
+            Math.floor(current)
+                .toLocaleString("pt-BR") +
+
             suffix;
 
     }, 20);
 
 }
 
-window.addEventListener("load", () => {
 
+/* =====================================================
+   ESTATÍSTICAS TEMPORÁRIAS
+=====================================================
+
+   Posteriormente estes valores virão da API.
+
+===================================================== */
+
+window.addEventListener("load", () => {
 
     animateCounter(
         "formandos",
@@ -121,159 +155,172 @@ window.addEventListener("load", () => {
 
     animateCounter(
         "bilhetes",
-        58000
+        6800
     );
 
     animateCounter(
         "premiosQtd",
-        35
+        3
     );
 
 });
 
-/* ==========================
-   TOP FORMANDOS
-========================== */
 
-const ranking = [
+/* =====================================================
+   USUARIO
+===================================================== */
 
-{
-    nome:"Julya Assis",
-    curso:"ADS",
-    faculdade:"IFBA",
-    arrecadado:4850,
-    percentual:97,
-    foto:"assets/images/user.jpg"
-},
+const usuarios = [
 
-{
-    nome:"Pedro Henrique",
-    curso:"Engenharia Civil",
-    faculdade:"UFBA",
-    arrecadado:4200,
-    percentual:84,
-    foto:"assets/images/user.jpg"
-},
+    {
 
-{
-    nome:"Ana Clara",
-    curso:"Direito",
-    faculdade:"UNEB",
-    arrecadado:3950,
-    percentual:79,
-    foto:"assets/images/user.jpg"
-},
+        nome: "Julya Assis",
 
-{
-    nome:"Lucas Santos",
-    curso:"Medicina",
-    faculdade:"UESC",
-    arrecadado:3500,
-    percentual:70,
-    foto:"assets/images/user.jpg"
-},
+        email: "",
 
-{
-    nome:"Maria Eduarda",
-    curso:"Arquitetura",
-    faculdade:"UFBA",
-    arrecadado:3200,
-    percentual:64,
-    foto:"assets/images/user.jpg"
-},
+        senha_hash: "",
 
-{
-    nome:"João Victor",
-    curso:"ADS",
-    faculdade:"IFBA",
-    arrecadado:3100,
-    percentual:62,
-    foto:"assets/images/user.jpg"
-}
+        perfil: "formando",
+
+        link_personalizado: "",
+
+        valor_total_arrecadado: 4850,
+
+        valor_abatido_formatura: 0
+
+    },
+
+    {
+
+        nome: "Pedro Henrique",
+
+        email: "",
+
+        senha_hash: "",
+
+        perfil: "formando",
+
+        link_personalizado: "",
+
+        valor_total_arrecadado: 4200,
+
+        valor_abatido_formatura: 0
+
+    },
+
+    {
+
+        nome: "Ana Clara",
+
+        email: "",
+
+        senha_hash: "",
+
+        perfil: "formando",
+
+        link_personalizado: "",
+
+        valor_total_arrecadado: 3950,
+
+        valor_abatido_formatura: 0
+
+    }
 
 ];
 
+
+/* =====================================================
+   RANKING
+===================================================== */
+
 const rankingGrid =
-document.getElementById("rankingGrid");
+    document.getElementById("rankingGrid");
 
-if(rankingGrid){
+if (rankingGrid) {
 
-    ranking.forEach((aluno,index) => {
+    usuarios
 
-        rankingGrid.innerHTML += `
+        .sort(
 
-        <div class="ranking-card fade-up">
+            (a, b) =>
 
-            <span class="posicao">
+                b.valor_total_arrecadado -
 
-                #${index + 1}
+                a.valor_total_arrecadado
 
-            </span>
+        )
 
-            <div class="aluno-info">
+        .forEach((usuario, index) => {
 
-                <img
-                src="${aluno.foto}"
-                alt="${aluno.nome}">
+            rankingGrid.innerHTML += `
 
-                <div>
+                <div class="ranking-card fade-up">
 
-                    <h3>
-                        ${aluno.nome}
-                    </h3>
+                    <span class="posicao">
 
-                    <p>
-                        ${aluno.curso}
-                        •
-                        ${aluno.faculdade}
-                    </p>
+                        #${index + 1}
+
+                    </span>
+
+                    <div class="aluno-info">
+
+                        <div>
+
+                            <h3>
+
+                                ${usuario.nome}
+
+                            </h3>
+
+                            <p>
+
+                                ${usuario.perfil}
+
+                            </p>
+
+                        </div>
+
+                    </div>
+
+                    <div class="arrecadado">
+
+                        R$
+
+                        ${usuario.valor_total_arrecadado
+                            .toLocaleString("pt-BR")}
+
+                    </div>
 
                 </div>
 
-            </div>
+            `;
 
-            <div class="progress">
-
-                <div
-                class="progress-bar"
-                style="
-                width:${aluno.percentual}%">
-                </div>
-
-            </div>
-
-            <div class="arrecadado">
-
-                R$
-                ${aluno.arrecadado.toLocaleString("pt-BR")}
-
-            </div>
-
-        </div>
-
-        `;
-
-    });
+        });
 
 }
 
-/* ==========================
+
+/* =====================================================
    SCROLL REVEAL
-========================== */
+===================================================== */
 
-const reveals =
-document.querySelectorAll(".fade-up");
+function revealOnScroll() {
 
-function revealOnScroll(){
+    const reveals =
+        document.querySelectorAll(".fade-up");
 
     reveals.forEach(element => {
 
         const top =
-        element.getBoundingClientRect().top;
+            element.getBoundingClientRect().top;
 
-        const visible = 100;
+        if (
 
-        if(top < window.innerHeight - visible){
+            top <
+
+            window.innerHeight - 100
+
+        ) {
 
             element.classList.add("show");
 
@@ -290,85 +337,99 @@ window.addEventListener(
 
 revealOnScroll();
 
-/* ==========================
+
+/* =====================================================
    HEADER SCROLL
-========================== */
+===================================================== */
 
 window.addEventListener("scroll", () => {
 
     const header =
-    document.querySelector(".header");
+        document.querySelector(".header");
 
-    if(window.scrollY > 50){
+    if (!header) return;
 
-        header.style.background =
-        "rgba(15,17,23,.98)";
-
-    }else{
+    if (window.scrollY > 50) {
 
         header.style.background =
-        "rgba(15,17,23,.95)";
+            "rgba(15,17,23,.98)";
+
+    } else {
+
+        header.style.background =
+            "rgba(15,17,23,.95)";
 
     }
 
 });
 
-/* ==========================
-   BOTÃO COMPRAR
-========================== */
 
-document.querySelectorAll(
-".btn-primary"
-).forEach(btn => {
+/* =====================================================
+   NAVEGAÇÃO PARA A RIFA
+===================================================== */
 
-    btn.addEventListener("click", () => {
+document
+    .querySelectorAll(".btn-primary")
+    .forEach(btn => {
 
-        const rifa =
-        document.getElementById("rifa");
+        btn.addEventListener("click", () => {
 
-        if(rifa){
+            const rifa =
+                document.getElementById("rifa");
 
-            rifa.scrollIntoView({
+            if (rifa) {
 
-                behavior:"smooth"
+                rifa.scrollIntoView({
 
-            });
+                    behavior: "smooth"
 
-        }
+                });
+
+            }
+
+        });
 
     });
 
-});
 
-/* ==========================
-   DADOS DA RIFA - está no arquivo da rifa
-========================== */
+/* =====================================================
+   NAVEGAÇÃO PARA O RANKING
+===================================================== */
+
+document
+    .querySelectorAll(".btn-secondary")
+    .forEach(btn => {
+
+        btn.addEventListener("click", () => {
+
+            const ranking =
+                document.getElementById("ranking");
+
+            if (ranking) {
+
+                ranking.scrollIntoView({
+
+                    behavior: "smooth"
+
+                });
+
+            }
+
+        });
+
+    });
 
 
-/* ==========================
+/* =====================================================
    ANO AUTOMÁTICO
-========================== */
+===================================================== */
 
-const footerYear =
-document.getElementById("anoAtual");
+const anoAtual =
+    document.getElementById("anoAtual");
 
-if(footerYear){
+if (anoAtual) {
 
-    footerYear.textContent =
-    new Date().getFullYear();
+    anoAtual.textContent =
+        new Date().getFullYear();
 
 }
-
-/* ==========================
-   PREPARAÇÃO FUTURA
-========================== */
-
-// API Formandos
-// API Bilhetes
-// API PIX
-// API Sorteios
-// API Ranking
-
-console.log(
-"FormaRifa carregado com sucesso."
-);
