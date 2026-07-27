@@ -1,0 +1,197 @@
+/* ==========================================
+   RESET
+========================================== */
+
+body {
+    margin: 0;
+    font-family: 'Poppins', sans-serif;
+    background: #f5f7fb;
+}
+
+
+/* ==========================================
+   LAYOUT
+========================================== */
+
+.login-page {
+    display: grid;
+    grid-template-columns: 1fr 520px;
+    min-height: 100vh;
+}
+
+
+/* ==========================================
+   BANNER ESQUERDO
+========================================== */
+
+.login-banner {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    padding: 60px;
+
+    background: linear-gradient(135deg, #0E7A5F, #15a37d);
+    color: #ffffff;
+}
+
+
+/* ==========================================
+   ÁREA DO LOGIN
+========================================== */
+
+.login-container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    padding: 40px;
+}
+
+
+/* ==========================================
+   CARD
+========================================== */
+
+.login-card {
+
+    width: 100%;
+    max-width: 420px;
+
+    padding: 40px;
+
+    background: #ffffff;
+
+    border-radius: 18px;
+
+    box-shadow: 0 18px 40px rgba(0, 0, 0, 0.12);
+
+}
+
+
+/* ==========================================
+   INPUTS
+========================================== */
+
+.input-group {
+
+    margin-bottom: 20px;
+
+}
+
+.input-box {
+
+    display: flex;
+
+    border: 1px solid #e5e7eb;
+
+    border-radius: 12px;
+
+    overflow: hidden;
+
+}
+
+.input-box input {
+
+    flex: 1;
+
+    border: none;
+
+    outline: none;
+
+    padding: 15px;
+
+}
+
+
+/* ==========================================
+   BOTÕES
+========================================== */
+
+.login-btn,
+.google-btn {
+
+    width: 100%;
+
+    padding: 15px;
+
+    border: none;
+
+    border-radius: 12px;
+
+    cursor: pointer;
+
+}
+
+.login-btn {
+
+    background: #0E7A5F;
+
+    color: #ffffff;
+
+}
+
+.google-btn {
+
+    margin-top: 20px;
+
+    background: #ffffff;
+
+    border: 1px solid #e5e7eb;
+
+}
+
+
+/* ==========================================
+   DIVISOR
+========================================== */
+
+.divider {
+
+    margin: 20px 0;
+
+    text-align: center;
+
+    color: #666666;
+
+}
+
+
+/* ==========================================
+   CADASTRO
+========================================== */
+
+.register {
+
+    margin-top: 20px;
+
+    text-align: center;
+
+}
+
+
+/* ==========================================
+   RESPONSIVIDADE
+========================================== */
+
+@media (max-width: 992px) {
+
+    .login-page {
+
+        grid-template-columns: 1fr;
+
+    }
+
+    .login-banner {
+
+        display: none;
+
+    }
+
+    .login-container {
+
+        padding: 20px;
+
+    }
+
+}
