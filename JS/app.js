@@ -113,11 +113,6 @@ function animateCounter(id, target, prefix = "", suffix = "") {
 
 window.addEventListener("load", () => {
 
-    animateCounter(
-        "arrecadado",
-        1250000,
-        "R$ "
-    );
 
     animateCounter(
         "formandos",
@@ -346,22 +341,9 @@ document.querySelectorAll(
 });
 
 /* ==========================
-   DADOS DA RIFA
+   DADOS DA RIFA - está no arquivo da rifa
 ========================== */
 
-const dadosRifa = {
-
-    totalBilhetes:10000,
-
-    vendidos:6800,
-
-    disponiveis:3200,
-
-    valorBilhete:10
-
-};
-
-console.table(dadosRifa);
 
 /* ==========================
    ANO AUTOMÁTICO
