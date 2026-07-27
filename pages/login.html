@@ -1,0 +1,216 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Entrar | Look Eventos</title>
+
+    <link rel="stylesheet" href="assets/css/login.css">
+
+    <!-- Font Awesome -->
+    <link rel="stylesheet"
+        href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css">
+
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap"
+        rel="stylesheet">
+</head>
+
+<body>
+
+    <main class="login-page">
+
+        <!-- Lado esquerdo -->
+        <section class="login-banner">
+
+            <div class="overlay"></div>
+
+            <div class="banner-content">
+
+                <img src="assets/images/logo.png"
+                    alt="Look Eventos"
+                    class="logo">
+
+                <h1>
+
+                    Bem-vindo de volta!
+
+                </h1>
+
+                <p>
+
+                    Faça login para acompanhar suas rifas,
+                    pagamentos e sorteios.
+
+                </p>
+
+            </div>
+
+        </section>
+
+        <!-- Lado direito -->
+
+        <section class="login-container">
+
+            <div class="login-card">
+
+                <h2>
+
+                    Entrar
+
+                </h2>
+
+                <p class="subtitle">
+
+                    Entre na sua conta.
+
+                </p>
+
+                <form id="loginForm">
+
+                    <!-- Email -->
+
+                    <div class="input-group">
+
+                        <label>
+
+                            E-mail
+
+                        </label>
+
+                        <div class="input-box">
+
+                            <i class="fa-solid fa-envelope"></i>
+
+                            <input
+                                type="email"
+                                id="email"
+                                placeholder="Digite seu e-mail"
+                                required>
+
+                        </div>
+
+                    </div>
+
+                    <!-- Senha -->
+
+                    <div class="input-group">
+
+                        <label>
+
+                            Senha
+
+                        </label>
+
+                        <div class="input-box">
+
+                            <i class="fa-solid fa-lock"></i>
+
+                            <input
+                                type="password"
+                                id="senha"
+                                placeholder="Digite sua senha"
+                                required>
+
+                            <button
+                                type="button"
+                                id="togglePassword">
+
+                                <i class="fa-solid fa-eye"></i>
+
+                            </button>
+
+                        </div>
+
+                    </div>
+
+                    <!-- Opções -->
+
+                    <div class="login-options">
+
+                        <label class="remember">
+
+                            <input type="checkbox">
+
+                            Lembrar de mim
+
+                        </label>
+
+                        <a href="recuperar-senha.html">
+
+                            Esqueci minha senha
+
+                        </a>
+
+                    </div>
+
+                    <!-- Botão -->
+
+                    <button
+                        class="login-btn"
+                        type="submit">
+
+                        <span>
+
+                            Entrar
+
+                        </span>
+
+                    </button>
+
+                    <!-- Divider -->
+
+                    <div class="divider">
+
+                        <span>
+
+                            ou
+
+                        </span>
+
+                    </div>
+
+                    <!-- Google -->
+
+                    <button
+                        type="button"
+                        class="google-btn">
+
+                        <img
+                            src="assets/icons/google.png"
+                            alt="Google">
+
+                        Entrar com Google
+
+                    </button>
+
+                </form>
+
+                <div class="register">
+
+                    Não possui conta?
+
+                    <a href="cadastro.html">
+
+                        Criar Conta
+
+                    </a>
+
+                </div>
+
+            </div>
+
+        </section>
+
+    </main>
+
+    <script src="assets/js/login.js"></script>
+
+</body>
+
+</html>
