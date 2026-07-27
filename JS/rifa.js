@@ -1,634 +1,592 @@
-/* =====================================
-   CONFIGURAÇÕES
-===================================== */
+/* =====================================================
+   NUMEROS_RIFAS
+===================================================== */
 
-const VALOR_BILHETE = 10;
+let numeros_rifas = [];
 
-const TOTAL_NUMEROS = 10000;
 
-const NUMEROS_POR_PAGINA = 1000;
+/* =====================================================
+   VARIÁVEIS DA CAMPANHA
+===================================================== */
 
 let paginaAtual = 1;
 
-/* =====================================
-   ELEMENTOS
-===================================== */
+const NUMEROS_POR_PAGINA = 1000;
 
-const numerosGrid =
-document.getElementById("numerosGrid");
+let numeros_selecionados = [];
 
-const listaNumeros =
-document.getElementById("listaNumeros");
 
-const quantidadeBilhetes =
-document.getElementById("quantidadeBilhetes");
+/* =====================================================
+   ELEMENTOS DO HTML
+===================================================== */
+
+const gradeNumeros =
+    document.getElementById(
+        "gradeNumeros"
+    );
+
+const listaSelecionados =
+    document.getElementById(
+        "listaSelecionados"
+    );
+
+const qtdSelecionado =
+    document.getElementById(
+        "qtdSelecionado"
+    );
+
+const qtdDisponivel =
+    document.getElementById(
+        "qtdDisponivel"
+    );
+
+const qtdVendido =
+    document.getElementById(
+        "qtdVendido"
+    );
 
 const valorTotal =
-document.getElementById("valorTotal");
-
-const paginaAtualSpan =
-document.getElementById("paginaAtual");
-
-/* =====================================
-   ESTADO
-===================================== */
-
-let numerosSelecionados = [];
-
-/* =====================================
-   DADOS DE EXEMPLO
-   (depois virão do backend)
-===================================== */
-
-const vendidos = [
-
-5,8,12,14,25,30,45,50,
-77,88,99,100,120,150,
-222,333,444,555,666,
-777,888,999,
-
-1200,1500,1750,
-2000,2222,2500,
-3000,3333,4000,
-5000,5555,7000,
-7777,8888,9999
-
-];
-
-const reservados = [
-
-15,16,17,18,19,
-
-70,71,72,73,
-
-201,202,203,
-
-1001,1002,1003,
-
-2200,2201,
-
-4500,4501,
-
-8200,8201
-
-];
-
-/* =====================================
-   PAGINAÇÃO
-===================================== */
-
-function atualizarPaginacao(){
-
-    if(!paginaAtualSpan) return;
-
-    const inicio =
-
-    ((paginaAtual - 1)
-    * NUMEROS_POR_PAGINA) + 1;
-
-    const fim =
-
-    Math.min(
-
-        paginaAtual *
-        NUMEROS_POR_PAGINA,
-
-        TOTAL_NUMEROS
-
+    document.getElementById(
+        "valorTotal"
     );
 
-    paginaAtualSpan.textContent =
-
-    `Página ${paginaAtual}
-    (${inicio} - ${fim})`;
-
-}
-
-/* =====================================
-   GERAR BILHETES
-===================================== */
-
-function gerarBilhetes(){
-
-    if(!numerosGrid) return;
-
-    numerosGrid.innerHTML = "";
-
-    const inicio =
-
-    ((paginaAtual - 1)
-    * NUMEROS_POR_PAGINA) + 1;
-
-    const fim =
-
-    Math.min(
-
-        inicio +
-        NUMEROS_POR_PAGINA - 1,
-
-        TOTAL_NUMEROS
-
+const paginaAtualElemento =
+    document.getElementById(
+        "paginaAtual"
     );
 
-    for(
-
-        let i = inicio;
-
-        i <= fim;
-
-        i++
-
-    ){
-
-        const numero =
-        document.createElement("div");
-
-        numero.classList.add(
-            "numero"
-        );
-
-        numero.dataset.numero = i;
-
-        numero.textContent =
-
-        i.toString()
-        .padStart(5,"0");
-
-        /* vendido */
-
-        if(
-            vendidos.includes(i)
-        ){
-
-            numero.classList.add(
-                "vendido"
-            );
-
-        }
-
-        /* reservado */
-
-        else if(
-            reservados.includes(i)
-        ){
-
-            numero.classList.add(
-                "reservado"
-            );
-
-        }
-
-        /* disponível */
-
-        else{
-
-            numero.addEventListener(
-                "click",
-                selecionarNumero
-            );
-
-        }
-
-        /* manter seleção ao trocar página */
-
-        if(
-
-            numerosSelecionados.includes(i)
-
-        ){
-
-            numero.classList.add(
-                "selecionado"
-            );
-
-        }
-
-        numerosGrid.appendChild(
-            numero
-        );
-
-    }
-
-    atualizarPaginacao();
-
-}
-
-/* =====================================
-   PRÓXIMA PÁGINA
-===================================== */
-
-const proximaPagina =
-
-document.getElementById(
-"proximaPagina"
-);
-
-if(proximaPagina){
-
-    proximaPagina.addEventListener(
-        "click",
-        ()=>{
-
-            const totalPaginas =
-
-            Math.ceil(
-
-                TOTAL_NUMEROS /
-
-                NUMEROS_POR_PAGINA
-
-            );
-
-            if(
-
-                paginaAtual <
-                totalPaginas
-
-            ){
-
-                paginaAtual++;
-
-                gerarBilhetes();
-
-                window.scrollTo({
-
-                    top:
-                    numerosGrid.offsetTop - 120,
-
-                    behavior:"smooth"
-
-                });
-
-            }
-
-        }
+const anterior =
+    document.getElementById(
+        "anterior"
     );
 
-}
-
-/* =====================================
-   PÁGINA ANTERIOR
-===================================== */
-
-const paginaAnterior =
-
-document.getElementById(
-"paginaAnterior"
-);
-
-if(paginaAnterior){
-
-    paginaAnterior.addEventListener(
-        "click",
-        ()=>{
-
-            if(
-                paginaAtual > 1
-            ){
-
-                paginaAtual--;
-
-                gerarBilhetes();
-
-                window.scrollTo({
-
-                    top:
-                    numerosGrid.offsetTop - 120,
-
-                    behavior:"smooth"
-
-                });
-
-            }
-
-        }
+const proximo =
+    document.getElementById(
+        "proximo"
     );
 
-}
-/* =====================================
-   SELECIONAR NÚMERO
-===================================== */
-
-function selecionarNumero(){
-
-    const numero = Number(
-        this.dataset.numero
+const buscarNumero =
+    document.getElementById(
+        "buscarNumero"
     );
 
-    if(
+const btnBuscar =
+    document.getElementById(
+        "btnBuscar"
+    );
 
-        numerosSelecionados.includes(
-            numero
-        )
+const surpresinha =
+    document.getElementById(
+        "surpresinha"
+    );
 
-    ){
+const limpar =
+    document.getElementById(
+        "limpar"
+    );
 
-        numerosSelecionados =
-        numerosSelecionados.filter(
+const comprar =
+    document.getElementById(
+        "comprar"
+    );
 
-            n => n !== numero
 
-        );
+/* =====================================================
+   CRIAR NUMEROS_RIFAS
+===================================================== */
 
-        this.classList.remove(
-            "selecionado"
-        );
+function carregarNumerosRifas() {
 
-    }
+    numeros_rifas = [];
 
-    else{
+    for (
 
-        numerosSelecionados.push(
-            numero
-        );
+        let numero = 1;
 
-        this.classList.add(
-            "selecionado"
-        );
+        numero <=
+        campanhia_rifas.quantidade_numeros;
 
-    }
+        numero++
 
-    atualizarCarrinho();
+    ) {
 
-}
+        numeros_rifas.push({
 
-/* =====================================
-   CARRINHO
-===================================== */
+            numero:
+                numero,
 
-function atualizarCarrinho(){
-
-    if(!listaNumeros) return;
-
-    if(
-
-        numerosSelecionados.length === 0
-
-    ){
-
-        listaNumeros.innerHTML = `
-
-        <p class="vazio">
-            Nenhum número selecionado
-        </p>
-
-        `;
-
-    }
-
-    else{
-
-        listaNumeros.innerHTML = "";
-
-        numerosSelecionados
-
-        .sort((a,b)=>a-b)
-
-        .forEach(numero => {
-
-            listaNumeros.innerHTML += `
-
-            <div class="numero-selecionado">
-
-                <span>
-
-                    ${numero
-                    .toString()
-                    .padStart(5,"0")}
-
-                </span>
-
-                <span
-                    class="remover-numero"
-                    onclick="removerNumero(${numero})">
-
-                    ✕
-
-                </span>
-
-            </div>
-
-            `;
+            status:
+                "disponivel"
 
         });
 
     }
 
-    if(quantidadeBilhetes){
+}
 
-        quantidadeBilhetes.textContent =
 
-        numerosSelecionados.length;
+/* =====================================================
+   GERAR NÚMEROS
+===================================================== */
 
-    }
+function gerarNumerosRifas() {
 
-    if(valorTotal){
+    if (!gradeNumeros) return;
 
-        valorTotal.textContent =
+    gradeNumeros.innerHTML = "";
 
-        "R$ " +
+    const inicio =
 
-        (
+        (paginaAtual - 1)
 
-            numerosSelecionados.length *
+        *
 
-            VALOR_BILHETE
+        NUMEROS_POR_PAGINA;
 
-        )
 
-        .toLocaleString(
+    const fim = Math.min(
 
-            "pt-BR",
+        inicio +
 
-            {
+        NUMEROS_POR_PAGINA,
 
-                minimumFractionDigits:2
+        numeros_rifas.length
+
+    );
+
+
+    const numeros_da_pagina =
+
+        numeros_rifas.slice(
+
+            inicio,
+
+            fim
+
+        );
+
+
+    numeros_da_pagina.forEach(
+
+        numero_rifa => {
+
+            const elemento =
+
+                document.createElement(
+                    "div"
+                );
+
+
+            elemento.classList.add(
+                "numero"
+            );
+
+
+            elemento.dataset.numero =
+
+                numero_rifa.numero;
+
+
+            elemento.textContent =
+
+                numero_rifa.numero
+
+                    .toString()
+
+                    .padStart(
+                        5,
+                        "0"
+                    );
+
+
+            elemento.classList.add(
+
+                numero_rifa.status
+
+            );
+
+
+            if (
+
+                numero_rifa.status ===
+
+                "disponivel"
+
+            ) {
+
+                elemento.addEventListener(
+
+                    "click",
+
+                    selecionarNumero
+
+                );
 
             }
+
+
+            if (
+
+                numeros_selecionados
+
+                    .includes(
+
+                        numero_rifa.numero
+
+                    )
+
+            ) {
+
+                elemento.classList.add(
+
+                    "selecionado"
+
+                );
+
+            }
+
+
+            gradeNumeros.appendChild(
+
+                elemento
+
+            );
+
+        }
+
+    );
+
+
+    atualizarPaginacao();
+
+}
+
+
+/* =====================================================
+   PAGINAÇÃO
+===================================================== */
+
+function atualizarPaginacao() {
+
+    if (!paginaAtualElemento) return;
+
+    const inicio =
+
+        ((paginaAtual - 1)
+
+            *
+
+            NUMEROS_POR_PAGINA)
+
+        +
+
+        1;
+
+
+    const fim = Math.min(
+
+        paginaAtual
+
+        *
+
+        NUMEROS_POR_PAGINA,
+
+        numeros_rifas.length
+
+    );
+
+
+    paginaAtualElemento.textContent =
+
+        `${inicio} - ${fim}`;
+
+}
+
+
+if (proximo) {
+
+    proximo.addEventListener(
+
+        "click",
+
+        () => {
+
+            const totalPaginas =
+
+                Math.ceil(
+
+                    numeros_rifas.length
+
+                    /
+
+                    NUMEROS_POR_PAGINA
+
+                );
+
+
+            if (
+
+                paginaAtual <
+
+                totalPaginas
+
+            ) {
+
+                paginaAtual++;
+
+                gerarNumerosRifas();
+
+            }
+
+        }
+
+    );
+
+}
+
+
+if (anterior) {
+
+    anterior.addEventListener(
+
+        "click",
+
+        () => {
+
+            if (paginaAtual > 1) {
+
+                paginaAtual--;
+
+                gerarNumerosRifas();
+
+            }
+
+        }
+
+    );
+
+}
+
+
+/* =====================================================
+   SELECIONAR NUMERO
+===================================================== */
+
+function selecionarNumero() {
+
+    const numero = Number(
+
+        this.dataset.numero
+
+    );
+
+
+    const numero_rifa =
+
+        numeros_rifas.find(
+
+            item =>
+
+                item.numero ===
+
+                numero
+
+        );
+
+
+    if (!numero_rifa) return;
+
+
+    if (
+
+        numero_rifa.status !==
+
+        "disponivel"
+
+    ) return;
+
+
+    if (
+
+        numeros_selecionados
+
+            .includes(numero)
+
+    ) {
+
+        numeros_selecionados =
+
+            numeros_selecionados.filter(
+
+                item =>
+
+                    item !== numero
+
+            );
+
+
+        this.classList.remove(
+
+            "selecionado"
+
+        );
+
+    } else {
+
+        numeros_selecionados.push(
+
+            numero
+
+        );
+
+
+        this.classList.add(
+
+            "selecionado"
 
         );
 
     }
 
-}
-
-/* =====================================
-   REMOVER NÚMERO
-===================================== */
-
-function removerNumero(numero){
-
-    numerosSelecionados =
-
-    numerosSelecionados.filter(
-
-        n => n !== numero
-
-    );
-
-    document
-    .querySelectorAll(".numero")
-    .forEach(item => {
-
-        if(
-
-            Number(
-                item.dataset.numero
-            ) === numero
-
-        ){
-
-            item.classList.remove(
-                "selecionado"
-            );
-
-        }
-
-    });
 
     atualizarCarrinho();
 
 }
 
-window.removerNumero =
-removerNumero;
 
-/* =====================================
-   BUSCAR NÚMERO
-===================================== */
+/* =====================================================
+   CARRINHO
+===================================================== */
 
-const btnBuscar =
+function atualizarCarrinho() {
 
-document.getElementById(
-"btnBuscar"
-);
+    if (listaSelecionados) {
 
-if(btnBuscar){
+        if (
 
-    btnBuscar.addEventListener(
-        "click",
-        buscarNumero
-    );
+            numeros_selecionados.length === 0
 
-}
+        ) {
 
-function buscarNumero(){
+            listaSelecionados.textContent =
 
-    const numero = Number(
+                "Nenhum";
 
-        document
-        .getElementById(
-            "buscarNumero"
-        )
-        .value
+        } else {
 
-    );
+            listaSelecionados.textContent =
 
-    if(
+                numeros_selecionados
 
-        numero < 1 ||
+                    .sort(
 
-        numero > TOTAL_NUMEROS
+                        (a, b) => a - b
 
-    ){
+                    )
 
-        alert(
-            "Número inválido."
-        );
+                    .map(
 
-        return;
+                        numero =>
+
+                            numero
+
+                                .toString()
+
+                                .padStart(
+
+                                    5,
+
+                                    "0"
+
+                                )
+
+                    )
+
+                    .join(", ");
+
+        }
 
     }
 
-    paginaAtual =
 
-    Math.ceil(
+    if (qtdSelecionado) {
 
-        numero /
+        qtdSelecionado.textContent =
 
-        NUMEROS_POR_PAGINA
+            numeros_selecionados.length;
 
-    );
+    }
 
-    gerarBilhetes();
 
-    setTimeout(()=>{
+    if (valorTotal) {
 
-        const card =
+        valorTotal.textContent =
 
-        document.querySelector(
+            (
 
-        `[data-numero='${numero}']`
+                numeros_selecionados.length
 
-        );
+                *
 
-        if(card){
+                campanhia_rifas
 
-            card.scrollIntoView({
+                    .preco_por_numero
 
-                behavior:"smooth",
+            )
 
-                block:"center"
+                .toLocaleString(
 
-            });
+                    "pt-BR",
 
-            card.style.border =
-            "3px solid #ffffff";
+                    {
 
-            setTimeout(()=>{
+                        style: "currency",
 
-                card.style.border =
-                "none";
+                        currency: "BRL"
 
-            },3000);
+                    }
 
-        }
+                );
 
-    },100);
+    }
 
 }
 
-/* =====================================
+
+/* =====================================================
    SELEÇÃO ALEATÓRIA
-===================================== */
+===================================================== */
 
 function selecionarAleatorios(
+
     quantidade
-){
 
-    const disponiveis = [];
+) {
 
-    document
-    .querySelectorAll(".numero")
-    .forEach(numero => {
+    const disponiveis =
 
-        if(
+        numeros_rifas.filter(
 
-            !numero.classList.contains(
-                "vendido"
-            )
+            numero_rifa =>
 
-            &&
+                numero_rifa.status ===
 
-            !numero.classList.contains(
-                "reservado"
-            )
+                "disponivel"
 
-            &&
+                &&
 
-            !numero.classList.contains(
-                "selecionado"
-            )
+                !numeros_selecionados
 
-        ){
+                    .includes(
 
-            disponiveis.push(numero);
+                        numero_rifa.numero
 
-        }
+                    )
 
-    });
+        );
 
-    for(
+
+    for (
 
         let i = 0;
 
@@ -636,479 +594,268 @@ function selecionarAleatorios(
 
         i++
 
-    ){
+    ) {
 
-        if(
+        if (
 
             disponiveis.length === 0
 
         ) return;
 
+
         const indice =
-
-        Math.floor(
-
-            Math.random()
-
-            *
-
-            disponiveis.length
-
-        );
-
-        const escolhido =
-
-        disponiveis[indice];
-
-        escolhido.click();
-
-        disponiveis.splice(
-            indice,
-            1
-        );
-
-    }
-
-}
-
-/* =====================================
-   BOTÕES ALEATÓRIOS
-===================================== */
-
-document
-.querySelectorAll(
-".btn-random"
-)
-.forEach(botao => {
-
-    botao.addEventListener(
-        "click",
-        ()=>{
-
-            selecionarAleatorios(
-
-                Number(
-                    botao.dataset.qtd
-                )
-
-            );
-
-        }
-    );
-
-});
-
-/* =====================================
-   SURPRESINHA
-===================================== */
-
-const surpresinha =
-
-document.getElementById(
-"surpresinha"
-);
-
-if(surpresinha){
-
-    surpresinha.addEventListener(
-        "click",
-        ()=>{
-
-            const quantidade =
 
             Math.floor(
 
-                Math.random() * 20
+                Math.random()
 
-            ) + 1;
+                *
+
+                disponiveis.length
+
+            );
+
+
+        const numero_rifa =
+
+            disponiveis[indice];
+
+
+        numeros_selecionados.push(
+
+            numero_rifa.numero
+
+        );
+
+
+        disponiveis.splice(
+
+            indice,
+
+            1
+
+        );
+
+    }
+
+
+    gerarNumerosRifas();
+
+    atualizarCarrinho();
+
+}
+
+
+document
+
+    .querySelectorAll(
+
+        ".quick"
+
+    )
+
+    .forEach(
+
+        botao => {
+
+            botao.addEventListener(
+
+                "click",
+
+                () => {
+
+                    selecionarAleatorios(
+
+                        Number(
+
+                            botao.dataset.qtd
+
+                        )
+
+                    );
+
+                }
+
+            );
+
+        }
+
+    );
+
+
+/* =====================================================
+   SURPRESINHA
+===================================================== */
+
+if (surpresinha) {
+
+    surpresinha.addEventListener(
+
+        "click",
+
+        () => {
+
+            const quantidade =
+
+                Math.floor(
+
+                    Math.random() * 20
+
+                ) + 1;
+
 
             selecionarAleatorios(
+
                 quantidade
+
             );
 
         }
+
     );
 
 }
-/* =====================================
-   FORMULÁRIO DE COMPRA
-===================================== */
 
-const formCompra =
-document.getElementById(
-    "formCompra"
-);
 
-if(formCompra){
+/* =====================================================
+   LIMPAR
+===================================================== */
 
-    formCompra.addEventListener(
-        "submit",
-        function(e){
+if (limpar) {
 
-            e.preventDefault();
+    limpar.addEventListener(
 
-            if(
-                numerosSelecionados.length === 0
-            ){
+        "click",
+
+        () => {
+
+            numeros_selecionados = [];
+
+            gerarNumerosRifas();
+
+            atualizarCarrinho();
+
+        }
+
+    );
+
+}
+
+
+/* =====================================================
+   BUSCAR NUMERO
+===================================================== */
+
+if (btnBuscar) {
+
+    btnBuscar.addEventListener(
+
+        "click",
+
+        () => {
+
+            const numero = Number(
+
+                buscarNumero.value
+
+            );
+
+
+            if (
+
+                numero < 1
+
+                ||
+
+                numero >
+
+                numeros_rifas.length
+
+            ) {
 
                 alert(
-                    "Selecione pelo menos um bilhete."
+
+                    "Número inválido."
+
                 );
 
                 return;
 
             }
 
-            const nome =
-            document.getElementById(
-                "nome"
-            )?.value;
 
-            const email =
-            document.getElementById(
-                "email"
-            )?.value;
+            paginaAtual =
 
-            const telefone =
-            document.getElementById(
-                "telefone"
-            )?.value;
+                Math.ceil(
 
-            const cpf =
-            document.getElementById(
-                "cpf"
-            )?.value;
+                    numero
 
-            if(
-                !nome ||
-                !email ||
-                !telefone ||
-                !cpf
-            ){
+                    /
 
-                alert(
-                    "Preencha todos os campos."
+                    NUMEROS_POR_PAGINA
+
                 );
 
-                return;
 
-            }
+            gerarNumerosRifas();
 
-            abrirModalPix();
 
-        }
-    );
+            setTimeout(
 
-}
+                () => {
 
-/* =====================================
-   MODAL PIX
-===================================== */
+                    const elemento =
 
-const modalPix =
-document.getElementById(
-    "modalPix"
-);
+                        document.querySelector(
 
-const fecharModal =
-document.getElementById(
-    "fecharModal"
-);
+                            `[data-numero="${numero}"]`
 
-function abrirModalPix(){
+                        );
 
-    if(modalPix){
 
-        modalPix.classList.add(
-            "ativo"
-        );
+                    if (elemento) {
 
-    }
+                        elemento.scrollIntoView({
 
-}
+                            behavior:
+                                "smooth",
 
-function fecharModalPix(){
+                            block:
+                                "center"
 
-    if(modalPix){
+                        });
 
-        modalPix.classList.remove(
-            "ativo"
-        );
+                    }
 
-    }
+                },
 
-}
+                100
 
-if(fecharModal){
-
-    fecharModal.addEventListener(
-        "click",
-        fecharModalPix
-    );
-
-}
-
-window.addEventListener(
-    "click",
-    function(e){
-
-        if(
-            e.target === modalPix
-        ){
-
-            fecharModalPix();
-
-        }
-
-    }
-);
-
-/* =====================================
-   COPIAR PIX
-===================================== */
-
-const copiarPix =
-document.getElementById(
-    "copiarPix"
-);
-
-const codigoPix =
-document.getElementById(
-    "codigoPix"
-);
-
-if(copiarPix){
-
-    copiarPix.addEventListener(
-        "click",
-        ()=>{
-
-            codigoPix.select();
-
-            codigoPix.setSelectionRange(
-                0,
-                99999
             );
 
-            navigator.clipboard
-            .writeText(
-                codigoPix.value
-            )
-            .then(()=>{
-
-                copiarPix.textContent =
-                "✓ Código Copiado";
-
-                setTimeout(()=>{
-
-                    copiarPix.textContent =
-                    "Copiar Código PIX";
-
-                },2000);
-
-            });
-
         }
+
     );
 
 }
 
-/* =====================================
-   CONTADOR REGRESSIVO
-===================================== */
 
-const dataSorteio = new Date(
-    "2026-12-20T20:00:00"
-).getTime();
-
-function atualizarContador(){
-
-    const agora =
-    new Date().getTime();
-
-    const distancia =
-    dataSorteio - agora;
-
-    if(distancia <= 0){
-
-        document.getElementById(
-            "dias"
-        ).textContent = "00";
-
-        document.getElementById(
-            "horas"
-        ).textContent = "00";
-
-        document.getElementById(
-            "minutos"
-        ).textContent = "00";
-
-        document.getElementById(
-            "segundos"
-        ).textContent = "00";
-
-        return;
-    }
-
-    const dias = Math.floor(
-
-        distancia /
-
-        (1000 * 60 * 60 * 24)
-
-    );
-
-    const horas = Math.floor(
-
-        (
-
-            distancia %
-
-            (1000 * 60 * 60 * 24)
-
-        )
-
-        /
-
-        (1000 * 60 * 60)
-
-    );
-
-    const minutos = Math.floor(
-
-        (
-
-            distancia %
-
-            (1000 * 60 * 60)
-
-        )
-
-        /
-
-        (1000 * 60)
-
-    );
-
-    const segundos = Math.floor(
-
-        (
-
-            distancia %
-
-            (1000 * 60)
-
-        )
-
-        /
-
-        1000
-
-    );
-
-    document.getElementById(
-        "dias"
-    ).textContent =
-    String(dias).padStart(2,"0");
-
-    document.getElementById(
-        "horas"
-    ).textContent =
-    String(horas).padStart(2,"0");
-
-    document.getElementById(
-        "minutos"
-    ).textContent =
-    String(minutos).padStart(2,"0");
-
-    document.getElementById(
-        "segundos"
-    ).textContent =
-    String(segundos).padStart(2,"0");
-
-}
-
-setInterval(
-    atualizarContador,
-    1000
-);
-
-atualizarContador();
-
-/* =====================================
-   ANO AUTOMÁTICO
-===================================== */
-
-const anoAtual =
-document.getElementById(
-    "anoAtual"
-);
-
-if(anoAtual){
-
-    anoAtual.textContent =
-    new Date().getFullYear();
-
-}
-
-/* =====================================
-   ESTATÍSTICAS DINÂMICAS
-===================================== */
-
-function atualizarEstatisticas(){
-
-    const vendidosQtd =
-    vendidos.length;
-
-    const disponiveisQtd =
-
-        TOTAL_NUMEROS
-
-        -
-
-        vendidos.length
-
-        -
-
-        reservados.length;
-
-    console.log(
-        "Vendidos:",
-        vendidosQtd
-    );
-
-    console.log(
-        "Disponíveis:",
-        disponiveisQtd
-    );
-
-}
-
-/* =====================================
+/* =====================================================
    INICIALIZAÇÃO
-===================================== */
+===================================================== */
 
 document.addEventListener(
-    "DOMContentLoaded",
-    ()=>{
 
-        gerarBilhetes();
+    "DOMContentLoaded",
+
+    () => {
+
+        carregarNumerosRifas();
+
+        gerarNumerosRifas();
 
         atualizarCarrinho();
 
-        atualizarEstatisticas();
-
-        console.log(
-            "FormaRifa carregado com sucesso."
-        );
-
     }
+
 );
-
-//Na versão profissional com backend, você não deve manter:
-
-//const vendidos = [...]
-//const reservados = [...]
-//Esses dados devem vir da API, por exemplo:
-
-//fetch('/api/bilhetes')
