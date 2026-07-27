@@ -195,3 +195,24 @@ body {
     }
 
 }
+/* ==========================================
+   MENSAGENS DE ERRO
+========================================== */
+
+.erro {
+    display: block;
+    margin-top: 6px;
+    color: #dc2626;
+    font-size: 13px;
+    font-weight: 500;
+}
+
+
+/* ==========================================
+   BOTÃO DESABILITADO
+========================================== */
+
+.login-btn:disabled {
+    opacity: .7;
+    cursor: not-allowed;
+}
