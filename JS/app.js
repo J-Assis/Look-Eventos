@@ -167,137 +167,14 @@ window.addEventListener("load", () => {
 
 
 /* =====================================================
-   USUARIO
+   USUARIO - está no ranking.js
 ===================================================== */
-
-const usuarios = [
-
-    {
-
-        nome: "Julya Assis",
-
-        email: "",
-
-        senha_hash: "",
-
-        perfil: "formando",
-
-        link_personalizado: "",
-
-        valor_total_arrecadado: 4850,
-
-        valor_abatido_formatura: 0
-
-    },
-
-    {
-
-        nome: "Pedro Henrique",
-
-        email: "",
-
-        senha_hash: "",
-
-        perfil: "formando",
-
-        link_personalizado: "",
-
-        valor_total_arrecadado: 4200,
-
-        valor_abatido_formatura: 0
-
-    },
-
-    {
-
-        nome: "Ana Clara",
-
-        email: "",
-
-        senha_hash: "",
-
-        perfil: "formando",
-
-        link_personalizado: "",
-
-        valor_total_arrecadado: 3950,
-
-        valor_abatido_formatura: 0
-
-    }
-
-];
 
 
 /* =====================================================
-   RANKING
+   RANKING - está no ranking.js
 ===================================================== */
 
-const rankingGrid =
-    document.getElementById("rankingGrid");
-
-if (rankingGrid) {
-
-    usuarios
-
-        .sort(
-
-            (a, b) =>
-
-                b.valor_total_arrecadado -
-
-                a.valor_total_arrecadado
-
-        )
-
-        .forEach((usuario, index) => {
-
-            rankingGrid.innerHTML += `
-
-                <div class="ranking-card fade-up">
-
-                    <span class="posicao">
-
-                        #${index + 1}
-
-                    </span>
-
-                    <div class="aluno-info">
-
-                        <div>
-
-                            <h3>
-
-                                ${usuario.nome}
-
-                            </h3>
-
-                            <p>
-
-                                ${usuario.perfil}
-
-                            </p>
-
-                        </div>
-
-                    </div>
-
-                    <div class="arrecadado">
-
-                        R$
-
-                        ${usuario.valor_total_arrecadado
-                            .toLocaleString("pt-BR")}
-
-                    </div>
-
-                </div>
-
-            `;
-
-        });
-
-}
 
 
 /* =====================================================
