@@ -1,0 +1,290 @@
+/* ==========================================
+   RESET
+========================================== */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: "Poppins", sans-serif;
+    background: #f5f7fb;
+    color: #333;
+}
+
+/* ==========================================
+   LAYOUT
+========================================== */
+
+.cadastro-page {
+    display: grid;
+    grid-template-columns: 1fr 520px;
+    min-height: 100vh;
+}
+
+/* ==========================================
+   BANNER
+========================================== */
+
+.cadastro-banner {
+    position: relative;
+    background: linear-gradient(135deg, #0E7A5F, #15a37d);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 60px;
+    color: #fff;
+}
+
+.overlay {
+    position: absolute;
+    inset: 0;
+    background: rgba(0, 0, 0, .15);
+}
+
+.banner-content {
+    position: relative;
+    z-index: 2;
+    max-width: 450px;
+}
+
+.logo {
+    width: 180px;
+    margin-bottom: 30px;
+}
+
+.banner-content h1 {
+    font-size: 2.6rem;
+    margin-bottom: 20px;
+}
+
+.banner-content p {
+    line-height: 1.7;
+    opacity: .95;
+}
+
+/* ==========================================
+   CARD
+========================================== */
+
+.cadastro-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 40px;
+}
+
+.cadastro-card {
+
+    width: 100%;
+    max-width: 430px;
+
+    background: white;
+
+    padding: 40px;
+
+    border-radius: 18px;
+
+    box-shadow: 0 18px 40px rgba(0,0,0,.12);
+
+}
+
+.cadastro-card h2{
+
+    text-align:center;
+
+    margin-bottom:30px;
+
+    color:#0E7A5F;
+
+}
+
+/* ==========================================
+   INPUTS
+========================================== */
+
+.input-group{
+
+    margin-bottom:20px;
+
+}
+
+.input-group label{
+
+    display:block;
+
+    margin-bottom:8px;
+
+    font-weight:600;
+
+}
+
+.input-box{
+
+    display:flex;
+
+    align-items:center;
+
+    border:1px solid #ddd;
+
+    border-radius:12px;
+
+    overflow:hidden;
+
+    transition:.3s;
+
+}
+
+.input-box:focus-within{
+
+    border-color:#0E7A5F;
+
+    box-shadow:0 0 0 4px rgba(14,122,95,.12);
+
+}
+
+.input-box i{
+
+    width:45px;
+
+    text-align:center;
+
+    color:#777;
+
+}
+
+.input-box input{
+
+    flex:1;
+
+    border:none;
+
+    outline:none;
+
+    padding:15px;
+
+    font-size:15px;
+
+}
+
+.input-box button{
+
+    border:none;
+
+    background:none;
+
+    width:45px;
+
+    cursor:pointer;
+
+    color:#666;
+
+}
+
+/* ==========================================
+   BOTÃO
+========================================== */
+
+.cadastro-btn{
+
+    width:100%;
+
+    padding:15px;
+
+    margin-top:15px;
+
+    border:none;
+
+    border-radius:12px;
+
+    background:#0E7A5F;
+
+    color:white;
+
+    font-size:16px;
+
+    font-weight:600;
+
+    cursor:pointer;
+
+    transition:.3s;
+
+}
+
+.cadastro-btn:hover{
+
+    background:#0b604a;
+
+}
+
+/* ==========================================
+   LOGIN
+========================================== */
+
+.login-link{
+
+    text-align:center;
+
+    margin-top:25px;
+
+}
+
+.login-link a{
+
+    text-decoration:none;
+
+    color:#0E7A5F;
+
+    font-weight:600;
+
+}
+
+/* ==========================================
+   ERROS
+========================================== */
+
+.erro{
+
+    display:block;
+
+    color:#dc2626;
+
+    margin-top:6px;
+
+    font-size:13px;
+
+}
+
+/* ==========================================
+   RESPONSIVO
+========================================== */
+
+@media(max-width:992px){
+
+    .cadastro-page{
+
+        grid-template-columns:1fr;
+
+    }
+
+    .cadastro-banner{
+
+        display:none;
+
+    }
+
+    .cadastro-container{
+
+        padding:20px;
+
+    }
+
+    .cadastro-card{
+
+        max-width:100%;
+
+    }
+
+}
