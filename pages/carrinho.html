@@ -1,0 +1,504 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Finalizar Compra | Look Eventos</title>
+  
+  <!-- Fontes e Ícones -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+
+  <style>
+    /* ==========================================
+       RESET & VARIÁVEIS DE ESTILO
+       ========================================== */
+    :root {
+      --primary: #ff8a00;
+      --primary-hover: #e07900;
+      --bg-dark: #0f172a;
+      --bg-light: #f8fafc;
+      --surface: #ffffff;
+      --text-main: #1e293b;
+      --text-muted: #64748b;
+      --border: #e2e8f0;
+      --success: #22c55e;
+      --radius: 12px;
+      --shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.05), 0 8px 10px -6px rgba(0, 0, 0, 0.01);
+    }
+
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: 'Poppins', sans-serif;
+    }
+
+    body {
+      background-color: var(--bg-light);
+      color: var(--text-main);
+      line-height: 1.5;
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+    }
+
+    /* ==========================================
+       CABEÇALHO
+       ========================================== */
+    .header {
+      background: var(--surface);
+      border-bottom: 1px solid var(--border);
+      padding: 1rem 0;
+    }
+
+    .container {
+      max-width: 1100px;
+      margin: 0 auto;
+      padding: 0 1.5rem;
+    }
+
+    .header-container {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    .logo {
+      font-size: 1.5rem;
+      font-weight: 800;
+      color: var(--bg-dark);
+      text-decoration: none;
+    }
+
+    .logo span {
+      color: var(--primary);
+    }
+
+    .btn-voltar {
+      color: var(--text-muted);
+      text-decoration: none;
+      font-weight: 500;
+      font-size: 0.9rem;
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+      transition: color 0.2s;
+    }
+
+    .btn-voltar:hover {
+      color: var(--primary);
+    }
+
+    /* ==========================================
+       CONTEÚDO PRINCIPAL (LAYOUT CHEKOUT)
+       ========================================== */
+    main {
+      flex: 1;
+      padding: 2.5rem 0;
+    }
+
+    .checkout-grid {
+      display: grid;
+      grid-template-columns: 1fr 400px;
+      gap: 2rem;
+      align-items: start;
+    }
+
+    .card {
+      background: var(--surface);
+      border-radius: var(--radius);
+      border: 1px solid var(--border);
+      box-shadow: var(--shadow);
+      padding: 1.75rem;
+      margin-bottom: 1.5rem;
+    }
+
+    .card-title {
+      font-size: 1.25rem;
+      font-weight: 700;
+      color: var(--bg-dark);
+      margin-bottom: 1.25rem;
+      display: flex;
+      align-items: center;
+      gap: 0.6rem;
+    }
+
+    .card-title i {
+      color: var(--primary);
+    }
+
+    /* Formulario */
+    .form-group {
+      margin-bottom: 1.25rem;
+    }
+
+    .form-group label {
+      display: block;
+      font-size: 0.875rem;
+      font-weight: 600;
+      margin-bottom: 0.4rem;
+      color: var(--text-main);
+    }
+
+    .form-group input,
+    .form-group select {
+      width: 100%;
+      padding: 0.75rem 1rem;
+      border: 1px solid var(--border);
+      border-radius: 8px;
+      font-size: 0.95rem;
+      outline: none;
+      transition: border-color 0.2s;
+    }
+
+    .form-group input:focus,
+    .form-group select:focus {
+      border-color: var(--primary);
+    }
+
+    .form-row {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 1rem;
+    }
+
+    /* ==========================================
+       RESUMO DO PEDIDO & NUMEROS
+       ========================================== */
+    .numeros-tag-container {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.5rem;
+      max-height: 140px;
+      overflow-y: auto;
+      padding: 0.5rem;
+      background: var(--bg-light);
+      border-radius: 8px;
+      border: 1px solid var(--border);
+      margin-bottom: 1.25rem;
+    }
+
+    .tag-numero {
+      background: var(--primary);
+      color: #fff;
+      font-weight: 700;
+      font-size: 0.85rem;
+      padding: 0.25rem 0.6rem;
+      border-radius: 6px;
+    }
+
+    .resumo-linha {
+      display: flex;
+      justify-content: space-between;
+      margin-bottom: 0.75rem;
+      font-size: 0.95rem;
+      color: var(--text-muted);
+    }
+
+    .resumo-linha.total {
+      border-top: 1px dashed var(--border);
+      padding-top: 1rem;
+      margin-top: 1rem;
+      font-size: 1.2rem;
+      font-weight: 800;
+      color: var(--bg-dark);
+    }
+
+    .resumo-linha.total span:last-child {
+      color: var(--primary);
+    }
+
+    .btn-pagar {
+      width: 100%;
+      background: var(--primary);
+      color: #fff;
+      border: none;
+      border-radius: 10px;
+      padding: 1rem;
+      font-size: 1rem;
+      font-weight: 700;
+      cursor: pointer;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      gap: 0.5rem;
+      transition: background 0.2s, transform 0.1s;
+    }
+
+    .btn-pagar:hover {
+      background: var(--primary-hover);
+    }
+
+    .btn-pagar:active {
+      transform: scale(0.99);
+    }
+
+    /* ==========================================
+       MODAL DE PAGAMENTO PIX (TELA DE SUCESSO)
+       ========================================== */
+    .modal-pix {
+      display: none;
+      position: fixed;
+      top: 0; left: 0; width: 100%; height: 100%;
+      background: rgba(15, 23, 42, 0.75);
+      backdrop-filter: blur(4px);
+      z-index: 1000;
+      justify-content: center;
+      align-items: center;
+      padding: 1rem;
+    }
+
+    .modal-pix.ativo {
+      display: flex;
+    }
+
+    .modal-content {
+      background: var(--surface);
+      border-radius: 16px;
+      max-width: 480px;
+      width: 100%;
+      padding: 2rem;
+      text-align: center;
+      box-shadow: 0 20px 25px -5px rgba(0,0,0,0.2);
+    }
+
+    .qr-box {
+      background: #fff;
+      border: 2px dashed var(--border);
+      padding: 1rem;
+      border-radius: 12px;
+      display: inline-block;
+      margin: 1rem 0;
+    }
+
+    .qr-box img {
+      width: 180px;
+      height: 180px;
+    }
+
+    .pix-copia-cola {
+      display: flex;
+      gap: 0.5rem;
+      margin-top: 1rem;
+    }
+
+    .pix-copia-cola input {
+      flex: 1;
+      padding: 0.6rem;
+      border: 1px solid var(--border);
+      border-radius: 6px;
+      font-size: 0.85rem;
+      background: var(--bg-light);
+    }
+
+    .btn-copiar {
+      background: var(--bg-dark);
+      color: #fff;
+      border: none;
+      padding: 0 1rem;
+      border-radius: 6px;
+      font-weight: 600;
+      cursor: pointer;
+    }
+
+    /* ==========================================
+       RESPONSIVO
+       ========================================== */
+    @media (max-width: 850px) {
+      .checkout-grid {
+        grid-template-columns: 1fr;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <header class="header">
+    <div class="container header-container">
+      <a class="logo" href="../index.html#inicio">LOOK<span>EVENTOS</span></a>
+      <a class="btn-voltar" href="../index.html#rifa"><i class="fas fa-arrow-left"></i> Voltar para a Rifa</a>
+    </div>
+  </header>
+
+  <main>
+    <div class="container">
+      <div class="checkout-grid">
+        
+        <!-- Formulário de Identificação do Comprador -->
+        <div class="col-form">
+          <div class="card">
+            <h2 class="card-title"><i class="fas fa-user-circle"></i> Seus Dados Pessoais</h2>
+            <form id="formCheckout">
+              <div class="form-group">
+                <label for="nome">Nome Completo</label>
+                <input type="text" id="nome" placeholder="Digite seu nome completo" required>
+              </div>
+
+              <div class="form-row">
+                <div class="form-group">
+                  <label for="telefone">WhatsApp / Celular</label>
+                  <input type="tel" id="telefone" placeholder="(00) 00000-0000" required>
+                </div>
+                <div class="form-group">
+                  <label for="email">E-mail (para confirmação)</label>
+                  <input type="email" id="email" placeholder="seu@email.com" required>
+                </div>
+              </div>
+
+              <div class="form-group">
+                <label for="formando">Apoiar um Formando (Opcional)</label>
+                <select id="formando">
+                  <option value="">Selecione um formando para creditar a venda</option>
+                  <option value="1">Maria Souza - Medicina 2026</option>
+                  <option value="2">João Pedro - Engenharia 2026</option>
+                  <option value="3">Ana Clara - Direito 2026</option>
+                </select>
+              </div>
+            </form>
+          </div>
+
+          <div class="card">
+            <h2 class="card-title"><i class="fas fa-shield-alt"></i> Pagamento Seguro</h2>
+            <p style="color: var(--text-muted); font-size: 0.9rem;">
+              O pagamento é processado via PIX com aprovação imediata. Seus bilhetes serão reservados instantaneamente após a confirmação.
+            </p>
+          </div>
+        </div>
+
+        <!-- Resumo do Pedido -->
+        <div class="col-resumo">
+          <div class="card">
+            <h2 class="card-title"><i class="fas fa-receipt"></i> Resumo do Pedido</h2>
+            
+            <label style="font-size: 0.85rem; font-weight:600; color: var(--text-muted); display:block; margin-bottom: 0.5rem;">
+              Números Selecionados (<span id="countQtd">0</span>):
+            </label>
+            
+            <div class="numeros-tag-container" id="boxNumeros">
+              <!-- Injetado via JavaScript -->
+            </div>
+
+            <div class="resumo-linha">
+              <span>Preço por número</span>
+              <span id="precoUnitario">R$ 5,00</span>
+            </div>
+            <div class="resumo-linha">
+              <span>Taxa de serviço</span>
+              <span style="color: var(--success); font-weight: 600;">Grátis</span>
+            </div>
+
+            <div class="resumo-linha total">
+              <span>Total a pagar</span>
+              <span id="valorTotalFinal">R$ 0,00</span>
+            </div>
+
+            <button type="submit" form="formCheckout" class="btn-pagar">
+              <i class="pix-icon fab fa-pix"></i> Gerar QrCode PIX
+            </button>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </main>
+
+  <!-- Modal PIX (Exibido após submeter o formulário) -->
+  <div class="modal-pix" id="modalPix">
+    <div class="modal-content">
+      <h3 style="color: var(--bg-dark); font-size: 1.3rem;">Escaneie o QR Code PIX</h3>
+      <p style="font-size: 0.85rem; color: var(--text-muted); margin-top: 0.2rem;">
+        Abra o aplicativo do seu banco e pague.
+      </p>
+
+      <div class="qr-box">
+        <!-- Exemplo de QRCode Ilustrativo -->
+        <img src="https://api.qrserver.com/v1/create-qr-code/?size=180x180&data=LOOK_EVENTOS_PIX_SIMULACAO" alt="QR Code PIX">
+      </div>
+
+      <p style="font-size: 0.8rem; color: var(--text-muted);">Ou copie o código abaixo:</p>
+      <div class="pix-copia-cola">
+        <input type="text" id="chavePix" value="00020126580014BR.GOV.BCB.PIX0136look-eventos-pix-chave-simulada" readonly>
+        <button class="btn-copiar" id="btnCopiarPix">Copiar</button>
+      </div>
+
+      <button class="btn-pagar" style="margin-top: 1.5rem; background: var(--bg-dark);" id="btnFecharModal">
+        Concluir / Voltar ao Início
+      </button>
+    </div>
+  </div>
+
+  <script>
+    /**
+     * Script Integrado do Carrinho de Checkout
+     */
+    const PRECO_UNITARIO = 5.00; // Alinhar com campanhia_rifas.preco_por_numero
+
+    document.addEventListener("DOMContentLoaded", () => {
+      const boxNumeros = document.getElementById("boxNumeros");
+      const countQtd = document.getElementById("countQtd");
+      const valorTotalFinal = document.getElementById("valorTotalFinal");
+      const formCheckout = document.getElementById("formCheckout");
+      const modalPix = document.getElementById("modalPix");
+      const btnCopiarPix = document.getElementById("btnCopiarPix");
+      const btnFecharModal = document.getElementById("btnFecharModal");
+
+      // 1. Carrega os números salvos pelo rifa.js no localStorage
+      const salvos = localStorage.getItem("look_rifa_selecionados");
+      let selecionados = [];
+
+      if (salvos) {
+        try {
+          selecionados = JSON.parse(salvos);
+        } catch (e) {
+          selecionados = [];
+        }
+      }
+
+      // Se o carrinho estiver vazio, avisa e volta para a rifa
+      if (selecionados.length === 0) {
+        boxNumeros.innerHTML = '<span style="color:var(--text-muted); font-size:0.85rem;">Nenhum número selecionado.</span>';
+        alert("Seu carrinho está vazio! Escolha os números da rifa primeiro.");
+        window.location.href = "../index.html#rifa";
+        return;
+      }
+
+      // 2. Renderiza as tags dos números no resumo
+      selecionados.sort((a, b) => a - b);
+      boxNumeros.innerHTML = selecionados.map(n => 
+        `<span class="tag-numero">${n.toString().padStart(5, '0')}</span>`
+      ).join('');
+
+      // 3. Atualiza contadores e preço total
+      countQtd.textContent = selecionados.length;
+      const total = selecionados.length * PRECO_UNITARIO;
+      valorTotalFinal.textContent = total.toLocaleString("pt-BR", { style: "currency", currency: "BRL" });
+
+      // 4. Submissão do Formulário (Gera a "Cobrança PIX")
+      formCheckout.addEventListener("submit", (e) => {
+        e.preventDefault();
+        
+        // Exibe o modal PIX
+        modalPix.classList.add("ativo");
+      });
+
+      // 5. Botão de Copiar o Código PIX
+      btnCopiarPix.addEventListener("click", () => {
+        const inputChave = document.getElementById("chavePix");
+        inputChave.select();
+        document.execCommand("copy");
+        btnCopiarPix.textContent = "Copiado!";
+        setTimeout(() => btnCopiarPix.textContent = "Copiar", 2000);
+      });
+
+      // 6. Fechar modal e limpar o carrinho após comprar
+      btnFecharModal.addEventListener("click", () => {
+        localStorage.removeItem("look_rifa_selecionados");
+        window.location.href = "../index.html";
+      });
+    });
+  </script>
+</body>
+</html>
