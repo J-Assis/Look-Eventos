@@ -1,170 +1,63 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
-
 <head>
-
-    <meta charset="UTF-8">
-
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-    <title>Cadastro | Look Eventos</title>
-
-    <link rel="stylesheet" href="assets/css/cadastro.css">
-
-    <link rel="stylesheet"
-        href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css">
-
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Criar Conta | FormaRifa</title>
+  <link rel="stylesheet" href="../css/style.css">
+  <link rel="stylesheet" href="../css/componentes.css">
+  <link rel="stylesheet" href="../css/login.css">
 </head>
-
-<body>
-
-<main class="cadastro-page">
-
-    <section class="cadastro-banner">
-
-        <div class="overlay"></div>
-
-        <div class="banner-content">
-
-            <img src="assets/images/logo.png" class="logo">
-
-            <h1>
-
-                Crie sua conta
-
-            </h1>
-
-            <p>
-
-                Comece a vender rifas online em poucos minutos.
-
-            </p>
-
-        </div>
-
-    </section>
-
-    <section class="cadastro-container">
-
-        <div class="cadastro-card">
-
-            <h2>
-
-                Cadastro
-
-            </h2>
-
-            <form id="cadastroForm">
-
-                <div class="input-group">
-
-                    <label>Nome Completo</label>
-
-                    <div class="input-box">
-
-                        <i class="fa-solid fa-user"></i>
-
-                        <input
-                            type="text"
-                            id="nome"
-                            name="nome"
-                            required>
-
-                    </div>
-
-                </div>
-
-                <div class="input-group">
-
-                    <label>Email</label>
-
-                    <div class="input-box">
-
-                        <i class="fa-solid fa-envelope"></i>
-
-                        <input
-                            type="email"
-                            id="email"
-                            name="email"
-                            required>
-
-                    </div>
-
-                </div>
-
-                <div class="input-group">
-
-                    <label>Senha</label>
-
-                    <div class="input-box">
-
-                        <i class="fa-solid fa-lock"></i>
-
-                        <input
-                            type="password"
-                            id="senha"
-                            name="senha"
-                            required>
-
-                        <button
-                            type="button"
-                            id="toggleSenha">
-
-                            <i class="fa-solid fa-eye"></i>
-
-                        </button>
-
-                    </div>
-
-                </div>
-
-                <div class="input-group">
-
-                    <label>Confirmar Senha</label>
-
-                    <div class="input-box">
-
-                        <i class="fa-solid fa-lock"></i>
-
-                        <input
-                            type="password"
-                            id="confirmarSenha"
-                            required>
-
-                    </div>
-
-                </div>
-
-                <button
-                    class="cadastro-btn"
-                    type="submit">
-
-                    Criar Conta
-
-                </button>
-
-            </form>
-
-            <div class="login-link">
-
-                Já possui conta?
-
-                <a href="login.html">
-
-                    Entrar
-
-                </a>
-
-            </div>
-
-        </div>
-
-    </section>
-
-</main>
-
-<script src="assets/js/cadastro.js"></script>
-
+<body class="auth-page">
+  <main class="auth-card">
+    <a class="logo" href="../index.html">Forma<span>Rifa</span></a>
+    
+    <h1>Criar conta</h1>
+    <p>Cadastre um usuário para acessar a plataforma.</p>
+
+    <form id="cadastroForm" class="grid">
+      <div class="field">
+        <label for="nome">Nome</label>
+        <input id="nome" name="nome" type="text" placeholder="Seu nome completo" required>
+      </div>
+
+      <div class="field">
+        <label for="email">Email</label>
+        <input id="email" name="email" type="email" placeholder="seu@email.com" required>
+      </div>
+
+      <div class="field">
+        <label for="senha">Senha</label>
+        <input id="senha" name="senha" type="password" placeholder="••••••••" required>
+      </div>
+
+      <div class="field">
+        <label for="perfil">Perfil</label>
+        <select id="perfil" name="perfil" required>
+          <option value="administrador">Administrador</option>
+          <option value="usuario">Usuário</option>
+        </select>
+      </div>
+
+      <div class="field">
+        <label for="link">Link personalizado</label>
+        <input id="link" name="link" type="text" placeholder="sua-rifa">
+      </div>
+
+      <button class="btn btn-primary" type="submit">Cadastrar</button>
+    </form>
+
+    <div class="auth-links">
+      <a href="login.html">Já tenho conta</a>
+      <a href="../index.html">Voltar</a>
+    </div>
+  </main>
+
+  <script>
+    document.getElementById("cadastroForm").addEventListener("submit", e => { 
+      e.preventDefault(); 
+      alert("Integração com o backend pendente."); 
+    });
+  </script>
 </body>
-
 </html>
